@@ -96,13 +96,13 @@ function bones_main_nav() {
 	// display the wp3 menu if available
     wp_nav_menu( 
     	array( 
-    		'menu' => 'main_nav', /* menu name */
-    		'menu_class' => 'nav',
+    		#'menu' => 'main_nav', /* menu name */
+    		#'menu_class' => 'top-menu',
     		'theme_location' => 'main_nav', /* where in the theme it's assigned */
-    		'container' => 'false', /* container class */
+    		#'container' => '', /* container class */
     		'fallback_cb' => 'bones_main_nav_fallback', /* menu fallback */
     		'depth' => '2', /* suppress lower levels for now */
-    		'walker' => new description_walker()
+    		#'walker' => new description_walker()
     	)
     );
 }

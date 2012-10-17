@@ -134,12 +134,12 @@ The comments page for Bones
 	
 	<div class="clearfix">
 		<div class="input">
-			<textarea name="comment" id="comment" placeholder="<?php _e("Your Comment Here…","bonestheme"); ?>" tabindex="4"></textarea>
+			<textarea class="span12" rows="5" cols="80" name="comment" id="comment" placeholder="Dein Kommentar hier!" tabindex="4"></textarea>
 		</div>
 	</div>
 	
-	<div class="form-actions">
-	  <input class="btn btn-primary" name="submit" type="submit" id="submit" tabindex="5" value="<?php _e("Submit Comment","bonestheme"); ?>" />
+	<div class="form-noactions">
+	  <input class="btn btn-primary" name="submit" type="submit" id="submit" tabindex="5" value="Kommentar absenden" />
 	  <?php comment_id_fields(); ?>
 	</div>
 	

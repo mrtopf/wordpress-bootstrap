@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 			
-			<div id="content" class="clearfix row-fluid">
+			<div id="content" class="clearfix row">
 			
-				<div id="main" class="span8 clearfix" role="main">
+				<div id="main" class="span9 clearfix" role="main">
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
@@ -14,7 +14,7 @@
 							
 							<div class="page-header"><h1 class="single-title" itemprop="headline"><?php the_title(); ?></h1></div>
 							
-							<p class="meta"><?php _e("Posted", "bonestheme"); ?> <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_date(); ?></time> <?php _e("by", "bonestheme"); ?> <?php the_author_posts_link(); ?> <span class="amp">&</span> <?php _e("filed under", "bonestheme"); ?> <?php the_category(', '); ?>.</p>
+							<p class="meta">Veröffentlicht am <time datetime="<?php echo the_time('j.m.Y'); ?>" pubdate><?php the_date(); ?></time> von <?php the_author_posts_link(); ?> in <?php _e("filed under", "wordpress-bootstrap"); ?> <?php the_category(', '); ?>.</p>
 						
 						</header> <!-- end article header -->
 					
@@ -61,7 +61,7 @@
 			
 				</div> <!-- end #main -->
     
-				<?php get_sidebar(); // sidebar 1 ?>
+				<?php get_sidebar("article"); // sidebar 1 ?>
     
 			</div> <!-- end #content -->
 

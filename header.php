@@ -46,6 +46,8 @@
 
 		<!-- wordpress head functions -->
 		<?php wp_head(); ?>
+        <link rel="stylesheet" id="googleFonts-css" href="http://fonts.googleapis.com/css?family=PT+Sans%3A400%2C700%2C400italic%7COswald&amp;ver=3.4.2" type="text/css" media="all">                                                                         
+
 		<!-- end of wordpress head -->
 
 		<!-- theme options from options panel -->
@@ -95,7 +97,7 @@
 				
 				<div class="navbar navbar-fixed-top">
 					<div class="navbar-inner">
-						<div class="container-fluid nav-container">
+						<div class="container nav-container">
 							<nav role="navigation">
 								<a class="brand" id="logo" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
 								
@@ -105,7 +107,7 @@
 							        <span class="icon-bar"></span>
 								</a>
 								
-								<div class="nav-collapse">
+								<div class="menu-collapse">
 									<?php bones_main_nav(); // Adjust using Menus in Wordpress Admin ?>
 								</div>
 								
@@ -125,4 +127,9 @@
 		
 		</header> <!-- end header -->
 		
-		<div class="container-fluid">
+		<div class="container">
+            <header id="logo">
+                <a title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>">
+                    <img width="580" src="<?php echo get_template_directory_uri(); ?>/images/pp.png">
+                </a>
+            </header>

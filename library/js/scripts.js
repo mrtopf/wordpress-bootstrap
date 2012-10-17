@@ -13,7 +13,7 @@ function addTwitterBSClass(thisObj) {
     if (titles[0]) {
       var num = parseInt(titles[0]);
       if (num > 0)
-      	$(thisObj).addClass('label');
+        $(thisObj).addClass('label');
       if (num == 2)
         $(thisObj).addClass('label label-info');
       if (num > 2 && num < 4)
@@ -25,79 +25,82 @@ function addTwitterBSClass(thisObj) {
     }
   }
   else
-  	$(thisObj).addClass('label');
+    $(thisObj).addClass('label');
   return true;
 }
-
 // as the page loads, call these scripts
+//
+$=jQuery
 $(document).ready(function() {
+    $('#slider').nivoSlider();
 
-	// modify tag cloud links to match up with twitter bootstrap
-	$("#tag-cloud a").each(function() {
-	    addTwitterBSClass(this);
-	    return true;
-	});
-	
-	$("p.tags a").each(function() {
-		addTwitterBSClass(this);
-		return true;
-	});
-	
-	$("ol.commentlist a.comment-reply-link").each(function() {
-		$(this).addClass('btn btn-success btn-mini');
-		return true;
-	});
-	
-	$('#cancel-comment-reply-link').each(function() {
-		$(this).addClass('btn btn-danger btn-mini');
-		return true;
-	});
-	
-	$('article.post').hover(function(){
-		$('a.edit-post').show();
-	},function(){
-		$('a.edit-post').hide();
-	});
-	
-	// Input placeholder text fix for IE
-	$('[placeholder]').focus(function() {
-	  var input = $(this);
-	  if (input.val() == input.attr('placeholder')) {
-		input.val('');
-		input.removeClass('placeholder');
-	  }
-	}).blur(function() {
-	  var input = $(this);
-	  if (input.val() == '' || input.val() == input.attr('placeholder')) {
-		input.addClass('placeholder');
-		input.val(input.attr('placeholder'));
-	  }
-	}).blur();
-	
-	// Prevent submission of empty form
-	$('[placeholder]').parents('form').submit(function() {
-	  $(this).find('[placeholder]').each(function() {
-		var input = $(this);
-		if (input.val() == input.attr('placeholder')) {
-		  input.val('');
-		}
-	  })
-	});
-	
-	$('#s').focus(function(){
-		if( $(window).width() < 940 ){
-			$(this).animate({ width: '200px' });
-		}
-	});
-	
-	$('#s').blur(function(){
-		if( $(window).width() < 940 ){
-			$(this).animate({ width: '100px' });
-		}
-	});
-			
-	$('.alert-message').alert();
-	
-	$('.dropdown-toggle').dropdown();
+
+    // modify tag cloud links to match up with twitter bootstrap
+    $("#tag-cloud a").each(function() {
+        addTwitterBSClass(this);
+        return true;
+    });
+    
+    $("p.tags a").each(function() {
+        addTwitterBSClass(this);
+        return true;
+    });
+    
+    $("ol.commentlist a.comment-reply-link").each(function() {
+        $(this).addClass('btn btn-success btn-mini');
+        return true;
+    });
+    
+    $('#cancel-comment-reply-link').each(function() {
+        $(this).addClass('btn btn-danger btn-mini');
+        return true;
+    });
+    
+    $('article.post').hover(function(){
+        $('a.edit-post').show();
+    },function(){
+        $('a.edit-post').hide();
+    });
+    
+    // Input placeholder text fix for IE
+    $('[placeholder]').focus(function() {
+      var input = $(this);
+      if (input.val() == input.attr('placeholder')) {
+        input.val('');
+        input.removeClass('placeholder');
+      }
+    }).blur(function() {
+      var input = $(this);
+      if (input.val() == '' || input.val() == input.attr('placeholder')) {
+        input.addClass('placeholder');
+        input.val(input.attr('placeholder'));
+      }
+    }).blur();
+    
+    // Prevent submission of empty form
+    $('[placeholder]').parents('form').submit(function() {
+      $(this).find('[placeholder]').each(function() {
+        var input = $(this);
+        if (input.val() == input.attr('placeholder')) {
+          input.val('');
+        }
+      })
+    });
+    
+    $('#s').focus(function(){
+        if( $(window).width() < 940 ){
+            $(this).animate({ width: '200px' });
+        }
+    });
+    
+    $('#s').blur(function(){
+        if( $(window).width() < 940 ){
+            $(this).animate({ width: '100px' });
+        }
+    });
+            
+    $('.alert-message').alert();
+    
+    $('.dropdown-toggle').dropdown();
  
 }); /* end of as page load scripts */

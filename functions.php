@@ -39,6 +39,7 @@ if ( ! isset( $content_width ) ) $content_width = 580;
 add_image_size( 'wpbs-featured', 638, 300, true );
 add_image_size( 'wpbs-featured-home', 970, 311, true);
 add_image_size( 'wpbs-featured-carousel', 970, 400, true);
+add_image_size( 'wpbs-boxed', 250, 250, true );
 add_image_size( 'bones-thumb-600', 600, 150, false );
 add_image_size( 'bones-thumb-300', 300, 100, true );
 /* 
@@ -74,6 +75,26 @@ function bones_register_sidebars() {
     	'before_title' => '<h4 class="widgettitle">',
     	'after_title' => '</h4>',
     ));
+
+    register_sidebar(array(
+        'id' => 'media',
+        'name' => 'Media Sidebar',
+        'description' => 'used on homepage only',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h4 class="widgettitle">',
+        'after_title' => '</h4>',
+    ));
+
+    register_sidebar(array(
+        'id' => 'article',
+        'name' => 'Article Sidebar',
+        'description' => 'used on article pages',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h4 class="widgettitle">',
+        'after_title' => '</h4>',
+    ));
     
     register_sidebar(array(
     	'id' => 'sidebar2',
@@ -88,7 +109,7 @@ function bones_register_sidebars() {
     register_sidebar(array(
       'id' => 'footer1',
       'name' => 'Footer 1',
-      'before_widget' => '<div id="%1$s" class="widget span4 %2$s">',
+      'before_widget' => '<div id="%1$s" class="widget span3 %2$s">',
       'after_widget' => '</div>',
       'before_title' => '<h4 class="widgettitle">',
       'after_title' => '</h4>',
@@ -97,7 +118,7 @@ function bones_register_sidebars() {
     register_sidebar(array(
       'id' => 'footer2',
       'name' => 'Footer 2',
-      'before_widget' => '<div id="%1$s" class="widget span4 %2$s">',
+      'before_widget' => '<div id="%1$s" class="widget span3 %2$s">',
       'after_widget' => '</div>',
       'before_title' => '<h4 class="widgettitle">',
       'after_title' => '</h4>',
@@ -106,7 +127,7 @@ function bones_register_sidebars() {
     register_sidebar(array(
       'id' => 'footer3',
       'name' => 'Footer 3',
-      'before_widget' => '<div id="%1$s" class="widget span4 %2$s">',
+      'before_widget' => '<div id="%1$s" class="widget span3 %2$s">',
       'after_widget' => '</div>',
       'before_title' => '<h4 class="widgettitle">',
       'after_title' => '</h4>',
@@ -138,11 +159,11 @@ function bones_comments($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>
 	<li <?php comment_class(); ?>>
 		<article id="comment-<?php comment_ID(); ?>" class="clearfix">
-			<div class="comment-author vcard row-fluid clearfix">
-				<div class="avatar span3">
+			<div class="comment-author vcard row clearfix">
+				<div class="avatar span1">
 					<?php echo get_avatar($comment,$size='75',$default='<path_to_url>' ); ?>
 				</div>
-				<div class="span9 comment-text">
+				<div class="span7 comment-text">
 					<?php printf(__('<h4>%s</h4>','bonestheme'), get_comment_author_link()) ?>
 					<?php edit_comment_link(__('Edit','bonestheme'),'<span class="edit-comment btn btn-small btn-info"><i class="icon-white icon-pencil"></i>','</span>') ?>
                     
@@ -414,7 +435,7 @@ class description_walker extends Walker_Nav_Menu
            	$attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
            	// if the item has children add these two attributes to the anchor tag
            	if ( $args->has_children ) {
-				$attributes .= ' class="dropdown-toggle" data-toggle="dropdown"';
+				$attributes .= ' class="dropdown-toggle" data-target="#" href="' .esc_attr( $item->url).'" data-toggle="dropdown"';
 			}
 
             $item_output = $args->before;
@@ -468,12 +489,16 @@ function theme_styles()
 { 
     // This is the compiled css file from LESS - this means you compile the LESS file locally and put it in the appropriate directory if you want to make any changes to the master bootstrap.css.
     wp_register_style( 'bootstrap', get_template_directory_uri() . '/library/css/bootstrap.css', array(), '1.0', 'all' );
+    wp_register_style( 'nivo-slider', get_template_directory_uri() . '/library/css/nivo-slider.css', array(), '1.0', 'all' );
+    wp_register_style( 'nivo-light', get_template_directory_uri() . '/library/css/nivo-themes/light/light.css', array(), '1.0', 'all' );
     wp_register_style( 'bootstrap-responsive', get_template_directory_uri() . '/library/css/responsive.css', array(), '1.0', 'all' );
     wp_register_style( 'wp-bootstrap', get_template_directory_uri() . '/style.css', array(), '1.0', 'all' );
     
     wp_enqueue_style( 'bootstrap' );
     wp_enqueue_style( 'bootstrap-responsive' );
     wp_enqueue_style( 'wp-bootstrap');
+    wp_enqueue_style( 'nivo-slider');
+    wp_enqueue_style( 'nivo-light');
 }
 add_action('wp_enqueue_scripts', 'theme_styles');
 
@@ -500,6 +525,7 @@ function theme_js(){
 
   wp_register_script('wpbs-scripts', get_template_directory_uri().'/library/js/scripts.js');
   wp_register_script('modernizr', get_template_directory_uri().'/library/js/modernizr.full.min.js');
+  wp_register_script('nivo-slider', get_template_directory_uri().'/library/js/jquery.nivo.slider.pack.js');
 
   // wp_enqueue_script('less', array(''), '1.3.0', true);
   wp_enqueue_script('jquery');
@@ -517,6 +543,7 @@ function theme_js(){
   // wp_enqueue_script('bootstrap-typeahead', array('jQuery'), '1.1', true);
   wp_enqueue_script('wpbs-scripts', array('jQuery'), '1.1', true);
   wp_enqueue_script('modernizr', array('jQuery'), '1.1', true);
+  wp_enqueue_script('nivo-slider', array('jQuery'), '1.1', true);
 }
 add_action('wp_enqueue_scripts', 'theme_js');
 
@@ -525,6 +552,7 @@ function get_wpbs_theme_options(){
   $theme_options_styles = '';
     
       $heading_typography = of_get_option('heading_typography');
+      /*
       if ( $heading_typography['face'] != 'Default' ) {
         $theme_options_styles .= '
         h1, h2, h3, h4, h5, h6{ 
@@ -543,6 +571,7 @@ function get_wpbs_theme_options(){
           color: ' . $main_body_typography['color'] . '; 
         }';
       }
+      */
       
       $link_color = of_get_option('link_color');
       if ($link_color) {
@@ -681,5 +710,50 @@ function get_wpbs_theme_options(){
 } // end get_wpbs_theme_options function
 
 
+function ausschuss_init() {
+    // create a new taxonomy
+    register_taxonomy(
+	'ausschuss',
+	'post',
+	array(
+	    'label' => __( 'Ausschuss' ),
+	    'query_var' => true,
+	    'hierarchical' => true,
+	    'rewrite' => array( 'slug' => 'ausschuss' ),
+	    //'capabilities' => array('assign_terms'=>'edit_guides', 'edit_terms'=>'publish_guides')
+	)
+    );
+}
+function thema_init() {
+    // create a new taxonomy
+    register_taxonomy(
+	'thema',
+	'post',
+	array(
+	    'label' => __( 'Thema' ),
+	    'query_var' => true,
+	    'hierarchical' => true,
+	    'rewrite' => array( 'slug' => 'thema' ),
+	    //'capabilities' => array('assign_terms'=>'edit_guides', 'edit_terms'=>'publish_guides')
+	)
+    );
+}
+add_action( 'init', 'ausschuss_init' );
+add_action( 'init', 'thema_init' );
 
-?>
+function the_excluded_category($excludedcats = array()){
+    $count = 0;
+    $categories = get_the_category();
+    foreach($categories as $category) {
+        $count++;
+        if ( !in_array($category->cat_ID, $excludedcats) ) {
+            echo '<a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "Cortos de %s" ), $category->name ) . '" ' . '>' . $category->name.'</a>';
+
+            if( $count != count($categories)-1 ){
+                echo ", ";
+            }
+
+        }
+    }
+}
+

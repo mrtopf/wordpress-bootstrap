@@ -1,0 +1,490 @@
+/*!  * Bootstrap v2.1.1
+ *
+ * Copyright 2012 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ */
+
+// CSS Reset
+@import "reset.less";
+
+// Core variables and mixins
+@import "variables.less"; // Modify this for custom colors, font-sizes, etc
+@import "mixins.less";
+
+// Grid system and page structure
+@import "scaffolding.less";
+@import "grid.less";
+@import "layouts.less";
+
+// Base CSS
+@import "type.less";
+@import "code.less";
+@import "forms.less";
+@import "tables.less";
+
+// Components: common
+@import "sprites.less";
+@import "dropdowns.less";
+@import "wells.less";
+@import "component-animations.less";
+@import "close.less";
+
+// Components: Buttons & Alerts
+@import "buttons.less";
+@import "button-groups.less";
+@import "alerts.less"; // Note: alerts share common CSS with buttons and thus have styles in buttons.less
+
+// Components: Nav
+@import "navs.less";
+@import "navbar.less";
+@import "breadcrumbs.less";
+@import "pagination.less";
+@import "pager.less";
+
+// Components: Popovers
+@import "modals.less";
+@import "tooltip.less";
+@import "popovers.less";
+
+// Components: Misc
+@import "thumbnails.less";
+@import "labels-badges.less";
+@import "progress-bars.less";
+@import "accordion.less";
+@import "carousel.less";
+@import "hero-unit.less";
+
+// Utility classes
+@import "utilities.less"; // Has to be last to override when necessary
+
+// my stuff
+.navbar {   
+    font-size: 0.95em;
+    font-weight: normal;
+}
+.navbar .brand {
+    display: none;
+}
+
+header#logo {
+    margin: 20px 0;
+    img {
+        max-width: 600px;
+    }
+}
+
+.lead {
+    font-size: 18px;
+    line-height: @baseLineHeight * 1.2;
+    font-weight: 200;
+}
+
+h1 a {
+    color: @textColor;
+}
+
+p.meta {
+    color: #888;
+    a {
+        color: #FF9F40;
+    }
+}
+
+.more-link {
+    font-size: 18px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Oswald";
+}
+
+
+/*
+ * menu stuff
+ */
+
+/* =Primary Menu
+ * -------------------------------------------------------------- */
+.menu {
+    margin:0 auto;
+    float: left; 
+}
+
+.menu {
+    display:block;
+    list-style-type:none;
+    margin: 0 auto;
+    padding:0;
+    font-size: 1.1em;
+    max-width: 1220px;
+}
+
+.menu li {
+    border:0;
+    display:block;
+    float:left;
+    margin:0;
+    padding:0;
+    position:relative;
+    z-index:5;
+}
+
+.menu li:hover {
+    white-space:normal;
+    z-index:10000;
+}
+
+.menu li li {
+    float:none;
+}
+
+.menu ul {
+    left:0;
+    position:absolute;
+    top:0;
+    visibility:hidden;
+    z-index:10;
+    
+     }
+
+.menu li:hover > ul {
+    top:100%;
+    visibility:visible;
+}
+
+.menu li li:hover > ul {
+    left:100%;
+    top:0;
+}
+
+.menu:after, 
+.menu ul:after {
+    clear:both;
+    content:".";
+    display:block;
+    height:0;
+    overflow:hidden;
+    visibility:hidden;
+}
+
+.menu, 
+.menu ul {
+    min-height:0;
+}
+
+.menu ul {
+    margin:-20px 0px 0px -30px;
+    padding:10px 30px 30px;
+    font-size: 1.2em;
+        
+}
+
+.menu ul ul {
+    margin:-30px 0 0 -10px;
+    padding:30px 30px 30px 10px;
+}
+
+.menu ul li a:hover, 
+.menu li li a:hover {
+    color:#484848;
+    text-decoration:none;
+}
+
+.menu ul {
+    min-width:15em;
+    width:auto;
+}
+
+.menu a {
+    height: 32px;
+    display: inline-block;
+    margin: 0 15px 0 0;
+    padding: 14px;
+    border: none;
+    font-size: 0.95em;
+    color: rgba(255, 255, 255, 0.75);
+    text-transform: none;
+    letter-spacing: 0;
+    position:relative;
+    line-height:1.8em;
+}
+
+.menu a:hover {
+        color:#fff;
+  
+}
+
+.menu .current_page_item a {
+        color:#fff;
+}
+
+.home .menu .current_page_item a {
+    background-color:transparent;
+}
+
+.menu li li {
+    background:#fff;
+    background-image:none;
+    border:1px solid #b2b2b2;
+    filter:none;
+     position: relative;
+  display: block;
+  width: 160px;
+  float: none;
+  color: #333;
+  border-bottom:none;
+}
+
+
+ul.menu ul li:last-child {   border-bottom:1px solid #b2b2b2;
+}
+
+.menu li li a {
+    background:transparent!important;
+    border:none;
+    color:#909090;
+    font-size: 0.7em;
+    font-weight:400;
+    height:auto;
+    text-shadow:none;
+    white-space:nowrap;
+    display: block;
+  float: none;
+  margin: 0 15px;
+  padding: 12px 0;
+  border-bottom: 1px solid #ECECEC;
+  word-break: break-word;
+}
+
+
+ul.menu ul li:last-child a {
+border-bottom: none;}
+
+.menu li li a:hover {
+    background-image:none;
+    color:#000000;
+    filter:none;
+}
+
+.menu ul > li + li {
+    border-top:0;
+}
+
+.menu li li:hover > ul {
+    left:100%;
+    top:0;
+}
+
+.menu > li:first-child > a {
+    border-left:none;
+}
+
+/* =Primary Main Menu IE Fixes (Modernizr)
+ * -------------------------------------------------------------- */
+.ie7 .menu ul {
+    background:url(images/ie7-fix.gif) repeat;
+}
+
+/* =Responsive Menu (Tinynav.js)
+ * -------------------------------------------------------------- */
+.tinynav { 
+    display:none 
+}
+
+.wp-caption {
+    padding: 10px;
+    margin: 10px;
+    img {
+        border: 1px solid #888;
+        .box-shadow(1px 1px 3px rgba(0,0,0,0.3));
+    }
+    &.alignright {
+        margin: 0 0 4px 10px;
+        float: right;
+    }
+    &.alignleft {
+        margin: 0 10px 4px;
+        float: right;
+    }
+    .wp-caption-text {
+        color: #777;
+        font-size: 90%;
+    }
+}
+
+.home .wp-caption {
+    display: none;
+}
+
+
+/*
+ * Type
+ */
+
+h1, h2, h3, h4, h5, h6 {
+  margin: (@baseLineHeight / 2) 0;
+  font-family: @headingsFontFamily;
+  font-weight: @headingsFontWeight;
+  line-height: 1;
+  color: @headingsColor;
+  text-rendering: optimizelegibility; // Fix the character spacing for headings
+  small {
+    font-weight: normal;
+    line-height: 1;
+    color: @grayLight;
+  }
+}
+h1 { font-size: 30px; line-height: 40px; }
+h2 { font-size: 28; line-height: 40px; }
+h3 { font-size: 24px; line-height: 40px; }
+h4 { font-size: 18px; line-height: 20px; }
+h5 { font-size: 14px; line-height: 20px; }
+h6 { font-size: 12px; line-height: 20px; }
+
+h1 small { font-size: 24px; }
+h2 small { font-size: 18px; }
+h3 small { font-size: 14px; }
+h4 small { font-size: 14px; }
+
+
+// slider
+.nivoSlider {
+    height: 250px !important;
+}
+
+/*
+ * Formats
+ */
+
+.post {
+    margin-bottom: 20px;
+}
+
+.format-quote .post_content {
+    font-family: @serifFontFamily;
+    font-style: italic;
+    p, .lead {
+        line-height: 1.6;
+        font-size: 25px;
+    }
+}
+
+
+/* comments */
+
+
+
+#comments{
+	line-height: 24px;
+	margin-bottom: 18px;
+}
+
+ol.commentlist,
+ol.commentlist ul.children{
+	list-style-type: none;
+	margin-left: 0;
+}
+
+.comment .vcard div{
+	margin-top: 8px;
+	padding: 0 10px;
+}
+
+ol.commentlist time{
+	font-size: .8em;
+	color: #eeeeee;
+}
+
+ol.commentlist div.comment-author{
+	position: relative;
+}
+
+ol.commentlist a.comment-edit-link{
+	color: #ffffff;
+	text-decoration: none;
+	padding-left: 5px;
+}
+
+ol.commentlist span.edit-comment{
+	position: absolute;
+	right: 0;
+	top: 8px;
+}
+
+ol.commentlist li.bypostauthor{
+	background-color: #dddddd;
+}
+
+ol.commentlist ul.children li{
+	background-color: #cccccc;
+}
+
+ol.commentlist ul.children li ul.children li{
+	background-color: #bbbbbb;
+}
+
+ol.commentlist ul.children li ul.children li ul.children li{
+	background-color: #aaaaaa;
+}
+
+ol.commentlist article{
+	border-bottom: none !important;
+    margin-bottom: 5px;
+}
+
+a.comment-reply-link{
+	position: absolute;
+	right: 0;
+	bottom: 5px;
+}
+
+#comment-nav ul{
+	list-style-type: none;
+	margin: 0;
+}
+
+#comment-form-elements{
+	list-style-type: none;
+	margin: 0;
+}
+
+.comment .vcard .avatar{
+	padding-right: 0;
+}
+
+.comment .vcard .comment-text{
+	margin-left: 0;
+}
+
+img.avatar{
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #dedede;
+	border-right: 1px solid #dedede;
+	border-left: 1px solid #ddd;
+	
+}
+
+ol.commentlist li{
+	padding-right: 10px;
+	background-color: transparent;
+}
+
+#pings{
+	margin-bottom: 9px;
+}
+
+ol.pinglist{
+	list-style-type: none;
+	margin: 0 0 9px 0;
+}
+
+#comment{
+}
+
+ol.commentlist #respond{
+	padding: 5px 10px;
+}
+
