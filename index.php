@@ -13,8 +13,18 @@
 						
 							<!--<a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'wpbs-featured' ); ?></a>-->
 							
-							<h1 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-							<p class="meta">Veröffentlicht am <time datetime="<?php echo the_time('j.m.Y'); ?>" pubdate><?php the_date(); ?></time> von <?php the_author_posts_link(); ?> in <?php _e("filed under", "wordpress-bootstrap"); ?> <?php the_excluded_category(array(42)); ?>.</p>
+							<h1 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+                                    <?php if (in_category("diskussion")): ?>
+                                        <span class="label label-info">DISKUSSION</span>
+                                    <?php endif ?>
+                                    <?php if (in_category("position")): ?>
+                                        <span class="label label-position">POSITION</span>
+                                    <?php endif ?>
+                                    <?php if (in_category("mitmachen")): ?>
+                                        <span class="label label-mitmachen">Mitmachen</span>
+                                    <?php endif ?>
+                            </h1>
+							<p class="meta">Veröffentlicht am <time datetime="<?php echo the_time('j.m.Y'); ?>" pubdate><?php the_date(); ?></time> von <?php the_author_posts_link(); ?> in <?php _e("filed under", "wordpress-bootstrap"); ?> <?php the_excluded_category(); ?>.</p>
 						
 						</header> <!-- end article header -->
 					
@@ -24,7 +34,6 @@
 						
 						<footer>
 			
-							<p class="tags"><?php the_tags('<span class="tags-title">' . __("Tags","wordpress-bootstrap") . ':</span> ', ' ', ''); ?></p>
 							
 						</footer> <!-- end article footer -->
 					

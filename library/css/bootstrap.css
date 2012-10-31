@@ -522,7 +522,7 @@ h5,
 h6 {
   margin: 12px 0;
   font-family: "Oswald", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: bold;
+  font-weight: 400;
   line-height: 1;
   color: inherit;
   text-rendering: optimizelegibility;
@@ -4895,6 +4895,10 @@ header#logo img {
   font-size: 18px;
   line-height: 28.799999999999997px;
   font-weight: 200;
+  margin-bottom: 10px;
+}
+article {
+  margin-bottom: 20px;
 }
 h1 a {
   color: #333333;
@@ -5112,7 +5116,7 @@ h5,
 h6 {
   margin: 12px 0;
   font-family: "Oswald", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: bold;
+  font-weight: 400;
   line-height: 1;
   color: inherit;
   text-rendering: optimizelegibility;
@@ -5169,10 +5173,21 @@ h4 small {
 /*
  * Formats
  */
-.post {
-  margin-bottom: 20px;
+.format-quote img {
+  display: none;
 }
 .format-quote .post_content {
+  background-color: #ffffff;
+  background-image: -moz-linear-gradient(left, #f8f8f8, #ffffff);
+  background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#f8f8f8), to(#ffffff));
+  background-image: -webkit-linear-gradient(left, #f8f8f8, #ffffff);
+  background-image: -o-linear-gradient(left, #f8f8f8, #ffffff);
+  background-image: linear-gradient(to right, #f8f8f8, #ffffff);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff8f8f8', endColorstr='#ffffffff', GradientType=1);
+  margin: 30px 50px 50px 20px;
+  border-left: 10px solid #e0e0e0;
+  padding: 20px;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-style: italic;
 }
@@ -5183,6 +5198,8 @@ h4 small {
 }
 /* comments */
 #comments {
+  border-top: 10px solid #f0f0f0;
+  padding-top: 20px;
   line-height: 24px;
   margin-bottom: 18px;
 }
@@ -5266,4 +5283,108 @@ ol.pinglist {
 }
 ol.commentlist #respond {
   padding: 5px 10px;
+}
+/* labels */
+.label {
+  font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  text-shadow: none;
+  background: #a0a0a0;
+}
+h1 .label {
+  font-family: "Lato", "Georgia";
+  text-transform: uppercase;
+  position: relative;
+  top: -10px;
+  font-size: 12px;
+  color: white;
+}
+.label-position,
+.badge-position {
+  background-color: #FF9F40;
+}
+.label-position[href],
+.badge-position[href] {
+  background-color: #ff850d;
+}
+.label-mitmachen,
+.badge-mitmachen {
+  background-color: #b94a48;
+}
+.label-mitmachen[href],
+.badge-mitmachen[href] {
+  background-color: #953b39;
+}
+/*
+ * widget styling
+ */
+.widget {
+  margin-bottom: 30px;
+}
+ul#recentcomments,
+.widget_recent_entries ul {
+  padding: 0;
+  margin: 0;
+}
+ul#recentcomments li,
+.widget_recent_entries ul li {
+  margin-left: 0;
+  margin-bottom: 0;
+  padding: 0 0 5px 0;
+  list-style: none;
+  border-bottom: 1px solid #f0f0f0;
+}
+/*
+ * author information box on single.php
+ */
+.author-box {
+  margin: 0 0 20px 0;
+}
+.author-socialmedia {
+  overflow: auto;
+  margin: 10px 0;
+  padding: 10px 0;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.author-socialmedia a {
+  display: block;
+  float: left;
+  margin: 5px;
+}
+.author-socialmedia a img {
+  width: 32px;
+  height: 32px;
+}
+.author-image-container {
+  display: inline;
+  float: left;
+  margin-right: 9px;
+}
+.author-image {
+  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  border: 1px solid #888;
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  max-width: 64px;
+  display: inline;
+}
+.author-bio {
+  margin: 5px 5px 5px 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+}
+/* 
+ * single page
+ */
+.page-header {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+.page-header h1 {
+  margin: 0;
 }

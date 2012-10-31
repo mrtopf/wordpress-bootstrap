@@ -46,7 +46,11 @@
 
 		<!-- wordpress head functions -->
 		<?php wp_head(); ?>
-        <link rel="stylesheet" id="googleFonts-css" href="http://fonts.googleapis.com/css?family=PT+Sans%3A400%2C700%2C400italic%7COswald&amp;ver=3.4.2" type="text/css" media="all">                                                                         
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700|PT+Sans:400,700|PT+Sans+Narrow|PT+Sans+Caption|Oswald:400,300,700' rel='stylesheet' type='text/css'>
+
+
+
+
 
 		<!-- end of wordpress head -->
 
