@@ -24,7 +24,13 @@
                                         <span class="label label-mitmachen">Mitmachen</span>
                                     <?php endif ?>
                             </h1>
-							<p class="meta">Veröffentlicht am <time datetime="<?php echo the_time('j.m.Y'); ?>" pubdate><?php the_date(); ?></time> von <?php the_author_posts_link(); ?> in <?php _e("filed under", "wordpress-bootstrap"); ?> <?php the_excluded_category(); ?>.</p>
+							<p class="meta">Veröffentlicht am <time datetime="<?php echo the_time('j.m.Y'); ?>" pubdate><?php the_date(); ?></time> von 
+                            <?php if(function_exists('coauthors_posts_links'))
+                                coauthors_posts_links(",", " und ");
+                            else
+                                the_author_posts_link();
+                            ?>
+                            in <?php _e("filed under", "wordpress-bootstrap"); ?> <?php the_excluded_category(); ?>.</p>
 						
 						</header> <!-- end article header -->
 					

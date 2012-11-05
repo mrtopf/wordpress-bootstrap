@@ -11,7 +11,15 @@
                         <header>
                             <?php the_post_thumbnail( 'wpbs-featured' ); ?>
                             <div class="page-header"><h1 class="single-title" itemprop="headline"><?php the_title(); ?></h1></div>
-                            <p class="meta">Veröffentlicht am <time datetime="<?php echo the_time('j.m.Y'); ?>" pubdate><?php the_date(); ?></time> von <?php the_author_posts_link(); ?> in <?php the_excluded_category(); ?>.</p>
+                            <p class="meta">Veröffentlicht am <time datetime="<?php echo the_time('j.m.Y'); ?>" pubdate><?php the_date(); ?></time> von 
+                            <?php 
+                            if(function_exists('coauthors_posts_links')):
+                                coauthors_posts_links(",", " und ");
+                            else:
+                                the_author_posts_link();
+                            endif;
+                            ?>
+                            in <?php the_excluded_category(); ?>.</p>
                         </header> <!-- end article header -->
                     
                         <section class="post_content clearfix" itemprop="articleBody">
