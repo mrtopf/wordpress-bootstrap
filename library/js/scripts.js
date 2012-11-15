@@ -56,12 +56,6 @@ $(document).ready(function() {
         return true;
     });
     
-    $('article.post').hover(function(){
-        $('a.edit-post').show();
-    },function(){
-        $('a.edit-post').hide();
-    });
-    
     // Input placeholder text fix for IE
     $('[placeholder]').focus(function() {
       var input = $(this);
