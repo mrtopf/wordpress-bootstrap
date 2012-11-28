@@ -39,7 +39,7 @@ if ( ! isset( $content_width ) ) $content_width = 580;
 add_image_size( 'wpbs-featured', 638, 300, true );
 add_image_size( 'wpbs-featured-home', 970, 311, true);
 add_image_size( 'wpbs-featured-carousel', 970, 400, true);
-add_image_size( 'wpbs-boxed', 250, 250, true );
+add_image_size( 'wpbs-boxed', 270, 270, true );
 add_image_size( 'bones-thumb-600', 600, 150, false );
 add_image_size( 'bones-thumb-300', 300, 100, true );
 /* 
@@ -495,16 +495,14 @@ function theme_styles()
 { 
     // This is the compiled css file from LESS - this means you compile the LESS file locally and put it in the appropriate directory if you want to make any changes to the master bootstrap.css.
     wp_register_style( 'bootstrap', get_template_directory_uri() . '/library/css/bootstrap.css', array(), '1.0', 'all' );
-    wp_register_style( 'nivo-slider', get_template_directory_uri() . '/library/css/nivo-slider.css', array(), '1.0', 'all' );
-    wp_register_style( 'nivo-light', get_template_directory_uri() . '/library/css/nivo-themes/light/light.css', array(), '1.0', 'all' );
+    wp_register_style( 'orbit', get_template_directory_uri() . '/library/css/orbit.css', array(), '1.0', 'all' );
     wp_register_style( 'bootstrap-responsive', get_template_directory_uri() . '/library/css/responsive.css', array(), '1.0', 'all' );
     wp_register_style( 'wp-bootstrap', get_template_directory_uri() . '/style.css', array(), '1.0', 'all' );
     
     wp_enqueue_style( 'bootstrap' );
     wp_enqueue_style( 'bootstrap-responsive' );
     wp_enqueue_style( 'wp-bootstrap');
-    wp_enqueue_style( 'nivo-slider');
-    wp_enqueue_style( 'nivo-light');
+    wp_enqueue_style( 'orbit');
 }
 add_action('wp_enqueue_scripts', 'theme_styles');
 
@@ -531,7 +529,8 @@ function theme_js(){
 
   wp_register_script('wpbs-scripts', get_template_directory_uri().'/library/js/scripts.js');
   wp_register_script('modernizr', get_template_directory_uri().'/library/js/modernizr.full.min.js');
-  wp_register_script('nivo-slider', get_template_directory_uri().'/library/js/jquery.nivo.slider.pack.js');
+  wp_register_script('foundation', get_template_directory_uri().'/library/js/foundation.min.js');
+  wp_register_script('orbit', get_template_directory_uri().'/library/js/jquery.foundation.orbit.js');
 
   // wp_enqueue_script('less', array(''), '1.3.0', true);
   wp_enqueue_script('jquery');
@@ -549,7 +548,8 @@ function theme_js(){
   // wp_enqueue_script('bootstrap-typeahead', array('jQuery'), '1.1', true);
   wp_enqueue_script('wpbs-scripts', array('jQuery'), '1.1', true);
   wp_enqueue_script('modernizr', array('jQuery'), '1.1', true);
-  wp_enqueue_script('nivo-slider', array('jQuery'), '1.1', true);
+  wp_enqueue_script('foundation', array('jQuery'), '1.1', true);
+  wp_enqueue_script('orbit', array('jQuery'), '1.1', true);
 }
 add_action('wp_enqueue_scripts', 'theme_js');
 
