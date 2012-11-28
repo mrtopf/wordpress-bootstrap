@@ -5575,46 +5575,310 @@ h4 small {
   font-size: 25px;
 }
 /* comments */
+.media-list .media-list {
+  margin-left: 74px;
+  margin-top: 10px;
+}
+.media-list .media-body {
+  position: relative;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #eee;
+}
+.media-list h4 {
+  line-height: 18px;
+}
+.media-list time {
+  font-size: 12px;
+}
+.media-list time a {
+  color: #999;
+}
 #comments {
   border-top: 10px solid #f0f0f0;
   padding-top: 20px;
   line-height: 24px;
   margin-bottom: 18px;
 }
-ol.commentlist,
-ol.commentlist ul.children {
-  list-style-type: none;
-  margin-left: 0;
-}
-.comment .vcard div {
-  margin-top: 8px;
-  padding: 0 10px;
-}
-ol.commentlist time {
-  font-size: .8em;
-  color: #eeeeee;
-}
-ol.commentlist div.comment-author {
-  position: relative;
-}
-ol.commentlist a.comment-edit-link {
-  color: #ffffff;
-  text-decoration: none;
-  padding-left: 5px;
-}
-ol.commentlist span.edit-comment {
-  position: absolute;
-  right: 0;
-  top: 8px;
-}
-ol.commentlist article {
-  border-bottom: none !important;
-  margin-bottom: 5px;
-}
-a.comment-reply-link {
+.comment-actions {
   position: absolute;
   right: 0;
   bottom: 5px;
+}
+a.comment-reply-link {
+  float: right;
+  margin-left: 6px;
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+
+  *zoom: 1;
+  padding: 4px 12px;
+  margin-bottom: 0;
+  font-size: 16px;
+  line-height: 24px;
+  *line-height: 24px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  color: #333333;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  background-color: #f5f5f5;
+  background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+  border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #e6e6e6;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  border: 1px solid #bbbbbb;
+  *border: 0;
+  border-bottom-color: #a2a2a2;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  *margin-left: .3em;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  border-color: #c5c5c5;
+  border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);
+  padding: 1px 6px;
+  font-size: 12px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #f08b26;
+  background-image: -moz-linear-gradient(top, #ff9f40, #d96c00);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ff9f40), to(#d96c00));
+  background-image: -webkit-linear-gradient(top, #ff9f40, #d96c00);
+  background-image: -o-linear-gradient(top, #ff9f40, #d96c00);
+  background-image: linear-gradient(to bottom, #ff9f40, #d96c00);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffff9f40', endColorstr='#ffd96c00', GradientType=0);
+  border-color: #d96c00 #d96c00 #8d4600;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #d96c00;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  line-height: 18px;
+  padding: 0 3px;
+}
+a.comment-reply-link [class^="icon-"],
+a.comment-reply-link [class*=" icon-"] {
+  /* keeps button heights with and without icons the same */
+
+  line-height: .9em;
+}
+a.comment-reply-link:hover,
+a.comment-reply-link:active,
+a.comment-reply-link.active,
+a.comment-reply-link.disabled,
+a.comment-reply-link[disabled] {
+  color: #333333;
+  background-color: #e6e6e6;
+  *background-color: #d9d9d9;
+}
+a.comment-reply-link:active,
+a.comment-reply-link.active {
+  background-color: #cccccc \9;
+}
+a.comment-reply-link:first-child {
+  *margin-left: 0;
+}
+a.comment-reply-link:hover {
+  color: #333333;
+  text-decoration: none;
+  background-color: #e6e6e6;
+  *background-color: #d9d9d9;
+  /* Buttons in IE7 don't get borders, so darken on hover */
+
+  background-position: 0 -15px;
+  -webkit-transition: background-position 0.1s linear;
+  -moz-transition: background-position 0.1s linear;
+  -o-transition: background-position 0.1s linear;
+  transition: background-position 0.1s linear;
+}
+a.comment-reply-link:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+a.comment-reply-link.active,
+a.comment-reply-link:active {
+  background-color: #e6e6e6;
+  background-color: #d9d9d9 \9;
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+}
+a.comment-reply-link.disabled,
+a.comment-reply-link[disabled] {
+  cursor: default;
+  background-color: #e6e6e6;
+  background-image: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+a.comment-reply-link .label,
+a.comment-reply-link .badge {
+  position: relative;
+  top: -1px;
+}
+a.comment-reply-link .label,
+a.comment-reply-link .badge {
+  top: 0;
+}
+a.comment-reply-link:hover,
+a.comment-reply-link:active,
+a.comment-reply-link.active,
+a.comment-reply-link.disabled,
+a.comment-reply-link[disabled] {
+  color: #ffffff;
+  background-color: #d96c00;
+  *background-color: #c05f00;
+}
+a.comment-reply-link:active,
+a.comment-reply-link.active {
+  background-color: #a65300 \9;
+}
+a.comment-reply-link .caret {
+  border-top-color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+a.comment-edit-link {
+  float: right;
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+
+  *zoom: 1;
+  padding: 4px 12px;
+  margin-bottom: 0;
+  font-size: 16px;
+  line-height: 24px;
+  *line-height: 24px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  color: #333333;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  background-color: #f5f5f5;
+  background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+  border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #e6e6e6;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  border: 1px solid #bbbbbb;
+  *border: 0;
+  border-bottom-color: #a2a2a2;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  *margin-left: .3em;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  border-color: #c5c5c5;
+  border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);
+  padding: 1px 6px;
+  font-size: 12px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  line-height: 18px;
+  padding: 0 3px;
+}
+a.comment-edit-link [class^="icon-"],
+a.comment-edit-link [class*=" icon-"] {
+  /* keeps button heights with and without icons the same */
+
+  line-height: .9em;
+}
+a.comment-edit-link:hover,
+a.comment-edit-link:active,
+a.comment-edit-link.active,
+a.comment-edit-link.disabled,
+a.comment-edit-link[disabled] {
+  color: #333333;
+  background-color: #e6e6e6;
+  *background-color: #d9d9d9;
+}
+a.comment-edit-link:active,
+a.comment-edit-link.active {
+  background-color: #cccccc \9;
+}
+a.comment-edit-link:first-child {
+  *margin-left: 0;
+}
+a.comment-edit-link:hover {
+  color: #333333;
+  text-decoration: none;
+  background-color: #e6e6e6;
+  *background-color: #d9d9d9;
+  /* Buttons in IE7 don't get borders, so darken on hover */
+
+  background-position: 0 -15px;
+  -webkit-transition: background-position 0.1s linear;
+  -moz-transition: background-position 0.1s linear;
+  -o-transition: background-position 0.1s linear;
+  transition: background-position 0.1s linear;
+}
+a.comment-edit-link:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+a.comment-edit-link.active,
+a.comment-edit-link:active {
+  background-color: #e6e6e6;
+  background-color: #d9d9d9 \9;
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+}
+a.comment-edit-link.disabled,
+a.comment-edit-link[disabled] {
+  cursor: default;
+  background-color: #e6e6e6;
+  background-image: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+a.comment-edit-link .label,
+a.comment-edit-link .badge {
+  position: relative;
+  top: -1px;
+}
+a.comment-edit-link .label,
+a.comment-edit-link .badge {
+  top: 0;
 }
 #comment-nav ul {
   list-style-type: none;
@@ -5647,9 +5911,11 @@ ol.pinglist {
   list-style-type: none;
   margin: 0 0 9px 0;
 }
+/*
 .comment.depth-2 {
-  margin-left: 80px;
+    margin-left: 80px;
 }
+*/
 ol.commentlist #respond {
   padding: 5px 10px;
 }

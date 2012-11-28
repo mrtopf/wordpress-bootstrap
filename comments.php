@@ -27,9 +27,13 @@ The comments page for Bones
         </ul>
     </nav>
     
-    <ol class="commentlist">
-        <?php wp_list_comments('type=comment&callback=bones_comments'); ?>
-    </ol>
+    <ul class="commentlist media-list">
+        <?php wp_list_comments(
+            array(  'type' => 'comment', 
+                    'callback' => 'bones_comments', 
+                    'walker' => new PPCommentWalker)); ?>
+
+    </ul>
     
     <?php endif; ?>
     
@@ -134,7 +138,7 @@ The comments page for Bones
     
     <div class="clearfix">
         <div class="input">
-            <textarea class="span8" rows="5" cols="80" name="comment" id="comment" placeholder="Dein Kommentar hier!" tabindex="4"></textarea>
+            <textarea class="span5" rows="5" cols="80" name="comment" id="comment" placeholder="Dein Kommentar hier!" tabindex="4"></textarea>
         </div>
     </div>
     
