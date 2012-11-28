@@ -30,12 +30,30 @@
                         <footer>
             
                             <?php the_tags('<p class="tags"><span class="tags-title">' . __("Tags","bonestheme") . ':</span> ', ' ', '</p>'); ?>
+
+                            <?php
+                            $terms = get_the_terms( $post->ID, 'ausschuss' );
+                            if ( $terms && ! is_wp_error( $terms ) ) : 
+                            ?>
+                            <div class="ausschuss-tags">
+                            <?php
+                                foreach ( $terms as $term ) {
+                                    echo '<a class="btn btn-mini btn-info" href="'.get_term_link($term->slug, 'ausschuss').'">Auschuss: '.$term->name.'</a>';
+                                }
+                            ?>
+                            </div>
+
+                            <?php endif; ?>
+
+
+
+
                             
                             <?php 
                             // only show edit button if user has permission to edit posts
                             if( $user_level > 0 ) { 
                             ?>
-                            <a href="<?php echo get_edit_post_link(); ?>" class="btn btn-success edit-post"><i class="icon-pencil icon-white"></i> <?php _e("Edit post","bonestheme"); ?></a>
+                            <a href="<?php echo get_edit_post_link(); ?>" class="btn btn-mini edit-post"><i class="icon-pencil"></i> <?php _e("Edit post","bonestheme"); ?></a>
                             <?php } ?>
                             
                         </footer> <!-- end article footer -->

@@ -83,7 +83,7 @@ msgstr "Jährliches Archiv für "
 #: archive.php:43 attachment.php:15 author.php:31 category-themen.php:61
 #: image.php:23 search.php:17
 msgid "Posted"
-msgstr ""
+msgstr "Geschrieben am"
 
 #: archive.php:43 attachment.php:15 author.php:31 category-themen.php:61
 #: image.php:23 search.php:17
@@ -93,7 +93,7 @@ msgstr "von"
 #: archive.php:43 attachment.php:15 author.php:31 category-themen.php:61
 #: index.php:27 search.php:17 single.php:17
 msgid "filed under"
-msgstr "veröffentilcht unter"
+msgstr "veröffentlicht unter"
 
 #: archive.php:70 author.php:58 category-themen.php:88 index.php:51
 #: search.php:42

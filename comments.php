@@ -134,7 +134,7 @@ The comments page for Bones
 	
 	<div class="clearfix">
 		<div class="input">
-			<textarea class="span12" rows="5" cols="80" name="comment" id="comment" placeholder="Dein Kommentar hier!" tabindex="4"></textarea>
+			<textarea class="span8" rows="5" cols="80" name="comment" id="comment" placeholder="Dein Kommentar hier!" tabindex="4"></textarea>
 		</div>
 	</div>
 	

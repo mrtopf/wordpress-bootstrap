@@ -26,7 +26,8 @@
 @import "tables.less";
 
 // Components: common
-@import "sprites.less";
+//@import "sprites.less";
+@import "font-awesome.less";
 @import "dropdowns.less";
 @import "wells.less";
 @import "component-animations.less";
@@ -91,6 +92,8 @@ h1 a {
 
 p.meta {
     color: #888;
+    margin: 0 0 20px 0;
+    font-size: 12px;
     a {
         color: #FF9F40;
     }
@@ -220,7 +223,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .menu .current_page_item a {
-        color:#fff;
+        color:#000;
+        font-weight: bold;
 }
 
 .home .menu .current_page_item a {
@@ -234,7 +238,7 @@ h1, h2, h3, h4, h5, h6 {
     filter:none;
      position: relative;
   display: block;
-  width: 160px;
+  width: 200px;
   float: none;
   color: #333;
   border-bottom:none;
@@ -422,19 +426,19 @@ ol.commentlist span.edit-comment{
 }
 
 ol.commentlist li.bypostauthor{
-    background-color: #dddddd;
+    //ackground-color: #dddddd;
 }
 
 ol.commentlist ul.children li{
-    background-color: #cccccc;
+    //background-color: #cccccc;
 }
 
 ol.commentlist ul.children li ul.children li{
-    background-color: #bbbbbb;
+    //background-color: #bbbbbb;
 }
 
 ol.commentlist ul.children li ul.children li ul.children li{
-    background-color: #aaaaaa;
+    //background-color: #aaaaaa;
 }
 
 ol.commentlist article{
@@ -486,6 +490,10 @@ ol.commentlist li{
 ol.pinglist{
     list-style-type: none;
     margin: 0 0 9px 0;
+}
+
+.comment.depth-2 {
+    margin-left: 80px;
 }
 
 #comment{
@@ -547,6 +555,17 @@ ul#recentcomments, .widget_recent_entries ul {
  * author information box on single.php
  */
 
+.authorarea {
+    h1 {
+        font-size: 70px;
+        line-height: 1.2;
+    }
+}
+
+.authorinfobox {
+    margin-bottom: 30px;
+}
+
 .author-box {
     margin: 0 0 20px 0;
 }
@@ -598,4 +617,61 @@ ul#recentcomments, .widget_recent_entries ul {
     h1 {
         margin: 0;
     }
+}
+
+.edit-post {
+    margin-top: 20px;
+}
+
+.ausschuss-tags {
+    margin: 30px 0 5px 0;
+}
+
+// list of abgeordnete
+#abgeordnete {
+    margin: 0;
+    padding: 0;
+    width: 900px;
+    li {
+        width: 160px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        margin-left: 10px;
+        display: inline-block;
+        height: 360px;
+        vertical-align: top;
+    }
+    img {
+        border: 1px solid #aaa;
+        padding: 3px;
+        max-width: 150px;
+    }
+}
+
+
+// 
+// light theme image slider
+//
+.theme-light.slider-wrapper {
+    margin: -10px 0 0 -10px;
+}
+
+.theme-light .nivoSlider {
+    margin-bottom: 10px !important;
+}
+
+// 
+// contact form updates 
+//
+
+.wpcf7-form-control-wrap { 
+    input, textarea, select {
+        width: 500px; 
+    }
+}
+
+.wpcf7-submit {
+    .btn();
+    .btn-primary();
 }

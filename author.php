@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-    <div id="content" class="clearfix row">
+    <div id="content" class="clearfix row authorarea">
         <div id="main" class="span8 clearfix" role="main">
             <?php 
                 $curauth = (get_query_var('author_name')) ? get_user_by('slug', get_query_var('author_name')) : get_userdata(get_query_var('author'));
@@ -19,36 +19,62 @@
                     </a>
                 </div>
                 <div class="span4">
+                    <div class="authorinfobox">
+                        <h5>Kontakt</h5>
+                        <?php if (get_the_author_meta("user_email")) { ?>
+                            <div class="author-email author-info">
+                                E-Mail: <a href="mailto:<?php echo $curauth->user_email; ?>"><?php echo $curauth->user_email; ?></a><br>
+                            </div>
+                        <?php } ?>
+                        <?php if (get_the_author_meta("telephone")) { ?>
+                            <div class="author-telephone author-info">
+                                Telefon: <?php echo $curauth->telephone; ?></a>
+                            </div>
+                        <?php } ?>
+                        <?php if (get_the_author_meta("telefax")) { ?>
+                            <div class="author-telefax author-info">
+                                Telefax: <?php echo $curauth->telefax; ?></a>
+                            </div>
+                        <?php } ?>
+                    </div>
                     <?php if ( ($curauth->user_tw) || ($curauth->user_fb) ) { ?>
-                    <h5>Social Media</h5>
-                        <?php if ($curauth->user_tw) { ?>
-                                <a href="<?php echo $curauth->user_tw; ?>"><img src="<?php bloginfo('template_directory') ?>/images/icons/twitter-32x32.png" title="twitter"></a>
-                        <?php } ?>
-                        <?php if (get_the_author_meta("user_fb")) { ?>
-                                <a href="<?php echo $curauth->user_fb; ?>"><img src="<?php bloginfo('template_directory') ?>/images/icons/facebook-32x32.png" title="facebook"></a>
-                        <?php } ?>
+                    <div class="authorinfobox">
+                        <h5>Social Media</h5>
+                            <?php if ($curauth->user_tw) { ?>
+                                    <a href="<?php echo $curauth->user_tw; ?>"><img src="<?php bloginfo('template_directory') ?>/images/icons/twitter-32x32.png" title="twitter"></a>
+                            <?php } ?>
+                            <?php if (get_the_author_meta("user_fb")) { ?>
+                                    <a href="<?php echo $curauth->user_fb; ?>"><img src="<?php bloginfo('template_directory') ?>/images/icons/facebook-32x32.png" title="facebook"></a>
+                            <?php } ?>
+                    </div>
                     <?php } ?>
 
                     <?php if ( ($curauth->mitarbeiter) ) {
                         $mitarbeiter = get_user_by('id', $curauth->mitarbeiter);
                     ?>
-                    <h5>Kontakt/Mitarbeiter</h5>
-                        <?php echo $mitarbeiter->display_name ?>
-                    <?php } ?>
+                    <div class="authorinfobox">
+                        <h5>Kontakt/Mitarbeiter</h5>
+                            <a href="/author/<?php echo $mitarbeiter->user_login; ?>"><?php echo $mitarbeiter->display_name ?></a>
+                        <?php } ?>
+                    </div>
 
                     <?php if ( ($curauth->ausschuesse) ) {
                         // return a list of ausschuesse with trimmed strings
                         function trim_value(&$value) { $value = trim($value); }
                         $ausschuesse = explode(",", $curauth->ausschuesse);
                         array_walk($ausschuesse, 'trim_value');
-                        $alist = array();
-                        foreach ($ausschuesse as $ausschuss) { 
-                            $term = get_term_by( 'slug', $ausschuss, "ausschuss" );
-                            array_push($alist, $term->name);
-                        }
                     ?>
-                        <h5>Aussch&uuml;sse</h5>
-                        <?php echo implode(",", $alist);?>
+                        <div class="authorinfobox">
+                            <h5>Aussch&uuml;sse</h5>
+                                <ul class="author-ausschuesse">
+                                <?php 
+                                    foreach ($ausschuesse as $ausschuss) { 
+                                        $term = get_term_by( 'slug', $ausschuss, "ausschuss" );
+                                        echo '<li><a class="" href="'.get_term_link($term->slug, 'ausschuss').'">'.$term->name.'</a></li>';
+                                    }
+                                ?>
+                                </ul>
+                        </div>
                     <?php } ?>
                 </div>
             </div>
@@ -116,8 +142,6 @@
             <h3>Vorstand</h3>
             <h3>Mitglieder</h3> 
         </div>
-
-        <?php get_sidebar(); // sidebar 1 ?>
 
     </div> <!-- end #content -->
 

@@ -161,7 +161,7 @@ function bones_comments($comment, $args, $depth) {
         <article id="comment-<?php comment_ID(); ?>" class="clearfix">
             <div class="comment-author vcard row clearfix">
                 <div class="avatar span1">
-                    <?php echo get_avatar($comment,$size='75',$default='<path_to_url>' ); ?>
+                    <?php echo get_avatar($comment,$size='75'); ?>
                 </div>
                 <div class="span7 comment-text">
                     <?php printf(__('<h4>%s</h4>','bonestheme'), get_comment_author_link()) ?>
@@ -797,6 +797,8 @@ add_action('after_setup_theme', 'lang_setup');
 function my_new_contactmethods( $contactmethods ) {
   $contactmethods['author_image'] = 'Autoren-Bild';
   $contactmethods['mitarbeiter'] = 'ID des Mitarbeiters';
+  $contactmethods['telephone'] = 'Telefonnummer';
+  $contactmethods['telefax'] = 'Faxnummer';
   $contactmethods['ausschuesse'] = 'Komma-separierte Liste der Ausschuss-IDs';
   return $contactmethods;
 }
