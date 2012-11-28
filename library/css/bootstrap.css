@@ -5545,9 +5545,6 @@ h3 small {
 h4 small {
   font-size: 14px;
 }
-.nivoSlider {
-  height: 250px !important;
-}
 #featured {
   height: 250px !important;
 }
@@ -6062,9 +6059,6 @@ ul#recentcomments li,
 .theme-light.slider-wrapper {
   margin: -10px 0 0 -10px;
 }
-.theme-light .nivoSlider {
-  margin-bottom: 10px !important;
-}
 .wpcf7-form-control-wrap input,
 .wpcf7-form-control-wrap textarea,
 .wpcf7-form-control-wrap select {
@@ -6211,10 +6205,6 @@ ul#recentcomments li,
 .wpcf7-submit .caret {
   border-top-color: #ffffff;
   border-bottom-color: #ffffff;
-}
-.nivo-caption {
-  position: relative !important;
-  bottom: 35px;
 }
 #featured {
   background: url(/images/foundation/orbit/spinner.gif) center center #f4f4f4;
