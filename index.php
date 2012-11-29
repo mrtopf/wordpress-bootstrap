@@ -35,7 +35,7 @@
 						</header> <!-- end article header -->
 					
 						<section class="post_content clearfix">
-							<?php the_content( "Weiterlesen &gt;" ); ?>
+							<?php the_content( "Weiterlesen &raquo;" ); ?>
 						</section> <!-- end article section -->
 						
 						<footer>

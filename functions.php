@@ -802,3 +802,10 @@ function my_new_contactmethods( $contactmethods ) {
   return $contactmethods;
 }
 add_filter('user_contactmethods','my_new_contactmethods',10,1);
+
+function new_excerpt_more($more) {
+    global $post;
+    return ' ... <a class="read-more" href="'. get_permalink($post->ID) . '">Weiterlesen &raquo;</a>';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
