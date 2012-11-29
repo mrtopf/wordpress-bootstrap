@@ -529,7 +529,6 @@ function theme_js(){
 
   wp_register_script('wpbs-scripts', get_template_directory_uri().'/library/js/scripts.js');
   wp_register_script('modernizr', get_template_directory_uri().'/library/js/modernizr.full.min.js');
-  wp_register_script('foundation', get_template_directory_uri().'/library/js/foundation.min.js');
   wp_register_script('orbit', get_template_directory_uri().'/library/js/jquery.foundation.orbit.js');
 
   // wp_enqueue_script('less', array(''), '1.3.0', true);
@@ -548,7 +547,6 @@ function theme_js(){
   // wp_enqueue_script('bootstrap-typeahead', array('jQuery'), '1.1', true);
   wp_enqueue_script('wpbs-scripts', array('jQuery'), '1.1', true);
   wp_enqueue_script('modernizr', array('jQuery'), '1.1', true);
-  wp_enqueue_script('foundation', array('jQuery'), '1.1', true);
   wp_enqueue_script('orbit', array('jQuery'), '1.1', true);
 }
 add_action('wp_enqueue_scripts', 'theme_js');
@@ -753,16 +751,11 @@ function the_excluded_category($excludedcats = array(42, 64)){
     $categories = get_the_category();
     foreach($categories as $category) {
         if ( !in_array($category->cat_ID, $excludedcats) ) {
-            array_push($new, $category);
+            $link = '<a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "Cortos de %s" ), $category->name ) . '" ' . '>' . $category->name.'</a>';
+            array_push($new, $link);
         }
     }
-    foreach($new as $category) {
-        $count++;
-        echo '<a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "Cortos de %s" ), $category->name ) . '" ' . '>' . $category->name.'</a>';
-        if( $count != count($categories)-1 ){
-            echo ", ";
-        }
-    }
+    echo implode(", ", $new); 
 }
 
 // shortcodes for multi column
