@@ -30,7 +30,7 @@
                             else
                                 the_author_posts_link();
                             ?>
-                            in <?php _e("filed under", "wordpress-bootstrap"); ?> <?php the_excluded_category(); ?>.</p>
+                            in <?php the_excluded_category(); ?>.</p>
 						
 						</header> <!-- end article header -->
 					
