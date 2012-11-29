@@ -5267,7 +5267,7 @@ header#logo img {
   max-width: 600px;
 }
 .lead {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 28.799999999999997px;
   font-weight: 200;
   margin-bottom: 10px;
@@ -5480,6 +5480,26 @@ ul.menu ul li:last-child a {
   color: #777;
   font-size: 90%;
 }
+img.alignleft {
+  display: block;
+  float: left;
+  border: 1px solid #888;
+  -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  padding: 3px;
+  margin-right: 10px;
+}
+img.alignright {
+  display: block;
+  float: right;
+  border: 1px solid #888;
+  -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  padding: 3px;
+  margin-left: 10px;
+}
 .home .wp-caption {
   display: none;
 }
@@ -5511,7 +5531,8 @@ h6 small {
 }
 h1 {
   font-size: 30px;
-  line-height: 40px;
+  line-height: 35px;
+  margin-bottom: 0;
 }
 h2 {
   font-size: 28;
@@ -6030,6 +6051,13 @@ ul#recentcomments li,
 .page-header h1 {
   margin: 0;
 }
+img.attachment-full {
+  margin-bottom: 20px;
+  border: 1px solid #222;
+  -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
 .edit-post {
   margin-top: 20px;
 }
@@ -6218,4 +6246,16 @@ ul#recentcomments li,
 }
 #featured.orbit img {
   display: block;
+}
+a.read-more {
+  display: block;
+  margin-bottom: 20px;
+}
+.widget_categoryposts ul {
+  margin: 0;
+}
+.widget_categoryposts .cat-post-item {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
 }

@@ -112,6 +112,17 @@
         
         <div class="container">
             <header id="logo">
+                <div class="pull-right" style="padding: 50px 50px 0 0;">
+                    <a href="http://www.facebook.com/PiratenfraktionNRW" title="zur Facebookseite der Fraktion">
+                        <img width="32" height="32" alt="Facebook-Icon" src="<?php echo get_template_directory_uri(); ?>/images/icons/facebook-32x32.png">
+                    </a>
+                    <a href="https://twitter.com/20piraten" title="zum Twitteraccount der Fraktion">
+                        <img width="32" height="32" alt="Twitter-Icon" src="<?php echo get_template_directory_uri(); ?>/images/icons/twitter-32x32.png">
+                    </a>
+                    <a href="https://youtube.com/PiratenfraktionNRW" title="zum YouTube-Account der Fraktion">
+                        <img width="32" height="32" alt="YouTube-Icon" src="<?php echo get_template_directory_uri(); ?>/images/icons/youtube-32x32.png">
+                    </a>
+                </div>
                 <a title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>">
                     <img width="580" src="<?php echo get_template_directory_uri(); ?>/images/pp.png">
                 </a>

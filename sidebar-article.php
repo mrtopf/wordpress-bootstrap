@@ -1,9 +1,11 @@
 <div id="sidebar-article" class="fluid-sidebar sidebar span3" role="complementary">
     <div class="author-box">
         <h3>Über <?php the_author(); ?></h3>
-        <div class="author-image-container">
-            <img class="author-image" src="<?php the_author_meta('author_image'); ?>" title="<?php the_author(); ?>" />
-        </div>
+        <?php if (get_the_author_meta("author_image")) { ?>
+            <div class="author-image-container">
+                <img class="author-image" src="<?php the_author_meta('author_image'); ?>" title="<?php the_author(); ?>" />
+            </div>
+        <?php } ?>
         <div class="author-bio">
             <?php the_author_meta('description'); ?>
         </div>

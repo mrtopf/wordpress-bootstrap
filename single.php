@@ -9,7 +9,6 @@
                     <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
                         
                         <header>
-                            <?php the_post_thumbnail( 'wpbs-featured' ); ?>
                             <div class="page-header"><h1 class="single-title" itemprop="headline"><?php the_title(); ?></h1></div>
                             <p class="meta">Veröffentlicht am <time datetime="<?php echo the_time('j.m.Y'); ?>" pubdate><?php the_date(); ?></time> von 
                             <?php 
@@ -20,6 +19,7 @@
                             endif;
                             ?>
                             in <?php the_excluded_category(); ?>.</p>
+                            <?php the_post_thumbnail( 'full' ); ?>
                         </header> <!-- end article header -->
                     
                         <section class="post_content clearfix" itemprop="articleBody">

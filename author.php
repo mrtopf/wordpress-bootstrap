@@ -53,7 +53,7 @@
                         $mitarbeiter = get_user_by('id', $curauth->mitarbeiter);
                     ?>
                     <div class="authorinfobox">
-                        <h5>Kontakt/Mitarbeiter</h5>
+                        <h5>Mitarbeiter</h5>
                             <a href="/author/<?php echo $mitarbeiter->user_login; ?>"><?php echo $mitarbeiter->display_name ?></a>
                         <?php } ?>
                     </div>
@@ -77,7 +77,6 @@
                         </div>
                     <?php } ?>
                 </div>
-            </div>
             <div class="row">
                 <div class="span8">
                     <hr>
@@ -89,7 +88,7 @@
             </div>
 
             <div class="row">
-                <div class="span4">
+                <div class="span6">
                     <h3>Letzte Artikel</h3>
                     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                     <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
@@ -105,6 +104,10 @@
                         <footer>
                         </footer> <!-- end article footer -->
                     </article> <!-- end article -->
+                    <?php endwhile; ?>  
+                    <?php else : ?>
+                        Bislang noch keine Artikel.
+                    <?php endif; ?> 
                     <?php if (function_exists('page_navi')) { // if expirimental feature is active ?>
                         <?php page_navi(); // use the page navi function ?>
                     <?php } else { // if it is disabled, display regular wp prev & next links ?>
@@ -115,13 +118,9 @@
                             </ul>
                         </nav>
                     <?php } ?>
-                    <?php endwhile; ?>  
-                    <?php else : ?>
-                        Bislang noch keine Artikel.
-                    <?php endif; ?> 
                 </div>
-                <div class="span4">
-                    <h3>Letzte Kommentare</h3>
+                <div class="span2">
+                    <h3>Kommentare</h3>
                     <?php 
                         $args = array( 'user_id' => $curauth->ID, 'number' => 20);
                         $comments = get_comments($args);
@@ -133,6 +132,8 @@
                             endforeach;
                             echo $output;
                     ?>
+                    <?php } else { ?>
+                        Bislang noch keine Kommentare.
                     <?php } ?>
                 </div>
             </div>
@@ -142,6 +143,7 @@
             <h3>Vorstand</h3>
             <h3>Mitglieder</h3> 
         </div>
+            </div>
 
     </div> <!-- end #content -->
 

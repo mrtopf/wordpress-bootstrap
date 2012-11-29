@@ -40,6 +40,7 @@ add_image_size( 'wpbs-featured', 638, 300, true );
 add_image_size( 'wpbs-featured-home', 970, 311, true);
 add_image_size( 'wpbs-featured-carousel', 970, 400, true);
 add_image_size( 'wpbs-boxed', 270, 270, true );
+add_image_size( 'full', 870 );
 add_image_size( 'bones-thumb-600', 600, 150, false );
 add_image_size( 'bones-thumb-300', 300, 100, true );
 /* 
@@ -290,7 +291,7 @@ function remove_more_jump_link($link) {
 add_filter('the_content_more_link', 'remove_more_jump_link');
 
 // Remove height/width attributes on images so they can be responsive
-add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10 );
+//add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10 );
 add_filter( 'image_send_to_editor', 'remove_thumbnail_dimensions', 10 );
 
 function remove_thumbnail_dimensions( $html ) {
