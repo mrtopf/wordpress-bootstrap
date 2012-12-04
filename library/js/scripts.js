@@ -32,7 +32,8 @@ function addTwitterBSClass(thisObj) {
 //
 $=jQuery
 $(document).ready(function() {
-    $('#featured').orbit({ fluid: '16x6' });
+    $('#featured').orbit({ fluid: '16x6', directionalNav: false });
+    $('.slideshow').orbit({ fluid: true, bullets: true });
 
     // modify tag cloud links to match up with twitter bootstrap
     $("#tag-cloud a").each(function() {
