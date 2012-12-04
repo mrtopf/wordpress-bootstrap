@@ -780,6 +780,16 @@ function pp_shortcode_col_two( $atts, $content = null ) {
 }
 add_shortcode( 'col_two', 'pp_shortcode_col_two' );
 
+function pp_shortcode_redner( $atts, $content = null ) {
+   return '<div class="redner">' . pp_remove_wpautop($content) . '</div>';
+}
+add_shortcode( 'redner', 'pp_shortcode_redner' );
+
+function pp_shortcode_info( $atts, $content = null ) {
+   return '<div class="info">' . pp_remove_wpautop($content) . '</div>';
+}
+add_shortcode( 'info', 'pp_shortcode_info' );
+
 /* language */
 
 load_theme_textdomain('bonestheme', get_template_directory().'/languages');
