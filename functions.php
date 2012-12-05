@@ -807,7 +807,7 @@ add_action('after_setup_theme', 'lang_setup');
 function my_new_contactmethods( $contactmethods ) {
   $contactmethods['author_image'] = 'Autoren-Bild';
   $contactmethods['mitarbeiter'] = 'ID des Mitarbeiters';
-  $contactmethods['telephone'] = 'Telefonnummer';
+  $contactmethods['telefon'] = 'Telefonnummer';
   $contactmethods['telefax'] = 'Faxnummer';
   $contactmethods['ausschuesse'] = 'Komma-separierte Liste der Ausschuss-IDs';
   return $contactmethods;
