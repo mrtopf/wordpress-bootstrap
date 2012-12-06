@@ -4,7 +4,7 @@
             
                 <div id="main" class="span8 clearfix" role="main">
                 
-                    <div class="page-header">
+                    <div class="page-header underline">
                     <?php if (is_category()) { ?>
                         <h1 class="archive_title h2">
                             Alle Artikel in <?php single_cat_title(); ?>
@@ -35,21 +35,14 @@
                     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                     
                     <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
-                        
                         <header>
-                            
                             <h3 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-                            
-                            <p class="meta">Veröffentlicht am <time datetime="<?php echo the_time('d.m.Y'); ?>" pubdate><?php the_date(); ?></time> <?php _e("by", "bonestheme"); ?> <?php the_author_posts_link(); ?> <span class="amp">&</span> <?php _e("filed under", "bonestheme"); ?> <?php the_category(', '); ?>.</p>
-                        
+                            <p class="meta">Veröffentlicht am <time datetime="<?php echo the_time('d.m.Y'); ?>" pubdate><?php the_date(); ?></time> <?php _e("by", "bonestheme"); ?> <?php the_author_posts_link(); ?> unter <?php the_category(', '); ?>.</p>
                         </header> <!-- end article header -->
                     
                         <section class="post_content">
-                        
                             <?php the_post_thumbnail( 'wpbs-featured' ); ?>
-                        
-                            <?php the_excerpt(); ?>
-                    
+                            <?php the_content( "Weiterlesen &raquo;" ); ?>
                         </section> <!-- end article section -->
                         
                         <footer>
