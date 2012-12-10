@@ -34,20 +34,17 @@
                             <?php
                             $terms = get_the_terms( $post->ID, 'ausschuss' );
                             if ( $terms && ! is_wp_error( $terms ) ) : 
-                            ?>
-                            <div class="ausschuss-tags">
-                            <?php
-                                foreach ( $terms as $term ) {
-                                    echo '<a class="btn btn-mini btn-info" href="'.get_term_link($term->slug, 'ausschuss').'">Auschuss: '.$term->name.'</a>';
-                                }
-                            ?>
-                            </div>
-
+                                ?>
+                                <div class="ausschuss-tags">
+                                <?php
+                                    foreach ( $terms as $term ) {
+                                        echo '<a class="btn btn-mini btn-info" href="'.get_term_link($term->slug, 'ausschuss').'">Auschuss: '.$term->name.'</a>';
+                                    }
+                                ?>
+                                </div>
                             <?php endif; ?>
 
-
-
-
+                            <?php if ( function_exists('socialshareprivacy') ) { socialshareprivacy(); } ?>
                             
                             <?php 
                             // only show edit button if user has permission to edit posts

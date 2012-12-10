@@ -18,6 +18,8 @@ require_once('library/options-panel.php');
 // Shortcodes
 require_once('library/shortcodes.php');
 
+require_once('library/cat-posts-widget.php');
+
 // Admin Functions (commented out by default)
 // require_once('library/admin.php');         // custom admin functions
 
@@ -91,6 +93,16 @@ function bones_register_sidebars() {
         'id' => 'article',
         'name' => 'Article Sidebar',
         'description' => 'used on article pages',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h4 class="widgettitle">',
+        'after_title' => '</h4>',
+    ));
+
+    register_sidebar(array(
+        'id' => 'overview',
+        'name' => 'Übersicht',
+        'description' => 'overview pages',
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget' => '</div>',
         'before_title' => '<h4 class="widgettitle">',
@@ -495,10 +507,10 @@ function add_active_class($classes, $item) {
 function theme_styles()  
 { 
     // This is the compiled css file from LESS - this means you compile the LESS file locally and put it in the appropriate directory if you want to make any changes to the master bootstrap.css.
-    wp_register_style( 'bootstrap', get_template_directory_uri() . '/library/css/bootstrap.css', array(), '1.0', 'all' );
+    wp_register_style( 'bootstrap', get_template_directory_uri() . '/library/css/bootstrap.css', array(), '1.1.3', 'all' );
     wp_register_style( 'orbit', get_template_directory_uri() . '/library/css/orbit.css', array(), '1.0', 'all' );
-    wp_register_style( 'bootstrap-responsive', get_template_directory_uri() . '/library/css/responsive.css', array(), '1.0', 'all' );
-    wp_register_style( 'wp-bootstrap', get_template_directory_uri() . '/style.css', array(), '1.0', 'all' );
+    wp_register_style( 'bootstrap-responsive', get_template_directory_uri() . '/library/css/responsive.css', array(), '1.1.2', 'all' );
+    wp_register_style( 'wp-bootstrap', get_template_directory_uri() . '/style.css', array(), '1.1.2', 'all' );
     
     wp_enqueue_style( 'bootstrap' );
     wp_enqueue_style( 'bootstrap-responsive' );
@@ -531,6 +543,8 @@ function theme_js(){
   wp_register_script('wpbs-scripts', get_template_directory_uri().'/library/js/scripts.js');
   wp_register_script('modernizr', get_template_directory_uri().'/library/js/modernizr.full.min.js');
   wp_register_script('orbit', get_template_directory_uri().'/library/js/jquery.foundation.orbit.js');
+  wp_register_script('placeholder', get_template_directory_uri().'/library/js/jquery.placeholder.min.js');
+  wp_register_script('ellipsis', get_template_directory_uri().'/library/js/jquery.autoellipsis-1.0.10.min.js');
 
   // wp_enqueue_script('less', array(''), '1.3.0', true);
   wp_enqueue_script('jquery');
@@ -549,6 +563,8 @@ function theme_js(){
   wp_enqueue_script('wpbs-scripts', array('jQuery'), '1.1', true);
   wp_enqueue_script('modernizr', array('jQuery'), '1.1', true);
   wp_enqueue_script('orbit', array('jQuery'), '1.1', true);
+  wp_enqueue_script('placeholder', array('jQuery'), '1.1', true);
+  wp_enqueue_script('ellipsis', array('jQuery'), '1.1', true);
 }
 add_action('wp_enqueue_scripts', 'theme_js');
 
@@ -771,12 +787,12 @@ if (!function_exists( "pp_remove_wpautop")) {
 }
 
 function pp_shortcode_col_one( $atts, $content = null ) {
-   return '<div class="span4">' . pp_remove_wpautop($content) . '</div>';
+   return '<div class="span4 procontra">' . pp_remove_wpautop($content) . '</div>';
 }
 add_shortcode( 'col_one', 'pp_shortcode_col_one' );
 
 function pp_shortcode_col_two( $atts, $content = null ) {
-   return '<div class="span4">' . pp_remove_wpautop($content) . '</div>';
+   return '<div class="span4 procontra">' . pp_remove_wpautop($content) . '</div>';
 }
 add_shortcode( 'col_two', 'pp_shortcode_col_two' );
 
@@ -804,11 +820,45 @@ function lang_setup() {
 
 add_action('after_setup_theme', 'lang_setup');                                                                                                                                     
 
+/*
+ * Profile fields
+ */
+add_action( 'show_user_profile', 'pp_extra_user_profile_fields' );
+add_action( 'edit_user_profile', 'pp_extra_user_profile_fields' );
+function pp_extra_user_profile_fields( $user ) {
+?>
+  <h3>Funktionen</h3>
+  <table class="form-table">
+    <tr>
+      <th><label for="funktionen">Funktionen</th>
+      <td>
+        <textarea rows=5 name="funktionen" id="funktionen" class="regular-text"><?php echo esc_attr( get_the_author_meta( 'funktionen', $user->ID ) ); ?></textarea><br>
+        <span class="description">Bitte gebe eine Liste von Funktionen ein, pro Funktion eine neue Zeile</span>
+    </td>
+    </tr>
+  </table>
+<?php
+}
+
+add_action( 'personal_options_update', 'pp_save_extra_user_profile_fields' );
+add_action( 'edit_user_profile_update', 'pp_save_extra_user_profile_fields' );
+function pp_save_extra_user_profile_fields( $user_id ) {
+  $saved = false;
+  if ( current_user_can( 'edit_user', $user_id ) ) {
+    update_user_meta( $user_id, 'funktionen', $_POST['funktionen'] );
+    $saved = true;
+  }
+  return true;
+}
+
+
 function my_new_contactmethods( $contactmethods ) {
   $contactmethods['author_image'] = 'Autoren-Bild';
   $contactmethods['mitarbeiter'] = 'ID des Mitarbeiters';
   $contactmethods['telefon'] = 'Telefonnummer';
+  $contactmethods['is_mdl'] = 'MdL? 1=ja, leer=nein';
   $contactmethods['telefax'] = 'Faxnummer';
+  $contactmethods['identica'] = 'Identica-Account';
   $contactmethods['ausschuesse'] = 'Komma-separierte Liste der Ausschuss-IDs';
   return $contactmethods;
 }
@@ -819,4 +869,5 @@ function new_excerpt_more($more) {
     return ' ... <a class="read-more" href="'. get_permalink($post->ID) . '">Weiterlesen &raquo;</a>';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
+
 

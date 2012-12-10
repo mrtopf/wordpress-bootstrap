@@ -4,7 +4,7 @@ build:
 
 watch:
 	echo "watching less files"; \
-	/opt/python/2.7/bin/watchmedo shell-command --patterns="*.less" --recursive --command="make" library/less
+	/usr/local/bin/watchmedo shell-command --patterns="*.less" --recursive --command="make" library/less
 
 .PHONY: build watch
 

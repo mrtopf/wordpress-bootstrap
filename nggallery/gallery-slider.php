@@ -7,7 +7,9 @@
     <div class="slideshow">
     <?php foreach ( $images as $image ) : ?>
         <div data-caption="#htmlCaption-<?php echo $image->pid ?>">
-            <img title="<?php echo $image->alttext ?>" alt="<?php echo $image->alttext ?>" src="<?php echo $image->imageURL ?>" />
+            <a href="<?php echo $image->imageURL ?>">
+                <img title="<?php echo $image->alttext ?>" alt="<?php echo $image->alttext ?>" src="<?php echo $image->imageURL ?>" />
+            </a>
         </div>
     <?php endforeach; ?>
     </div>

@@ -33,7 +33,7 @@ function addTwitterBSClass(thisObj) {
 $=jQuery
 $(document).ready(function() {
     $('#featured').orbit({ fluid: '16x6', directionalNav: false });
-    $('.slideshow').orbit({ fluid: true, bullets: true });
+    $('.slideshow').orbit({ fluid: true, bullets: true, advanceSpeed: 6000 });
 
     // modify tag cloud links to match up with twitter bootstrap
     $("#tag-cloud a").each(function() {
@@ -81,5 +81,10 @@ $(document).ready(function() {
     $('.alert-message').alert();
     
     $('.dropdown-toggle').dropdown();
+
+    $('input, textarea').placeholder();
+
+    $(".personal-blog-content").ellipsis();
+
  
 }); /* end of as page load scripts */

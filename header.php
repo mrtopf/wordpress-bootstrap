@@ -10,12 +10,104 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         
-        <title>
-            <?php if ( !is_front_page() ) { echo wp_title( ' ', true, 'left' ); echo ' | '; }
-            echo bloginfo( 'name' ); echo ' - '; bloginfo( 'description', 'display' );  ?> 
-        </title>
+        <title><?php if ( !is_front_page() ) { echo wp_title( ' ', true, 'left' ); echo ' | '; } echo bloginfo( 'name' ); echo ' - '; bloginfo( 'description', 'display' );  ?></title>
                 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<style>
+		@font-face {
+		  font-family: 'FontAwesome';
+		  font-style: normal;
+		  font-weight: 400;
+		  src: url('/wp-content/themes/wordpress-bootstrap/font/fontawesome-webfont.eot?#iefix') format('embedded-opentype'), url('/wp-content/themes/wordpress-bootstrap/font/fontawesome-webfont.woff') format('woff'), url('/wp-content/themes/wordpress-bootstrap/font/fontawesome-webfont.ttf') format('truetype'), url('/wp-content/themes/wordpress-bootstrap/font/fontawesome-webfont.svg#FontAwesome') format('svg');
+		}
+		@font-face {
+		    font-family: 'lato_blackregular';
+		    src: url('/wp-content/themes/wordpress-bootstrap/font/lato-black-webfont.eot');
+		    src: url('/wp-content/themes/wordpress-bootstrap/font/lato-black-webfont.eot?#iefix') format('embedded-opentype'),
+			 url('/wp-content/themes/wordpress-bootstrap/font/lato-black-webfont.woff') format('woff'),
+			 url('/wp-content/themes/wordpress-bootstrap/font/lato-black-webfont.ttf') format('truetype'),
+			 url('/wp-content/themes/wordpress-bootstrap/font/lato-black-webfont.svg#lato_blackregular') format('svg');
+		    font-weight: normal;
+		    font-style: normal;
+		}
+		@font-face {
+		    font-family: 'PT Sans';
+		    src: url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-bold-webfont.eot');
+		    src: url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-bold-webfont.eot?#iefix') format('embedded-opentype'),
+			 url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-bold-webfont.woff') format('woff'),
+			 url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-bold-webfont.ttf') format('truetype'),
+			 url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-bold-webfont.svg#pt_sansbold') format('svg');
+		    font-weight: bold;
+		    font-style: normal;
+
+		}
+
+		@font-face {
+		    font-family: 'PT Sans';
+		    src: url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-bolditalic-webfont.eot');
+		    src: url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+			 url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-bolditalic-webfont.woff') format('woff'),
+			 url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-bolditalic-webfont.ttf') format('truetype'),
+			 url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-bolditalic-webfont.svg#pt_sansbold_italic') format('svg');
+		    font-weight: bold;
+		    font-style: italic;
+
+		}
+
+		@font-face {
+		    font-family: 'PT Sans';
+		    src: url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-italic-webfont.eot');
+		    src: url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-italic-webfont.eot?#iefix') format('embedded-opentype'),
+			 url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-italic-webfont.woff') format('woff'),
+			 url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-italic-webfont.ttf') format('truetype'),
+			 url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-italic-webfont.svg#pt_sansitalic') format('svg');
+		    font-weight: normal;
+		    font-style: italic;
+
+		}
+
+		@font-face {
+		    font-family: 'PT Sans';
+		    src: url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-regular-webfont.eot');
+		    src: url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-regular-webfont.eot?#iefix') format('embedded-opentype'),
+			 url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-regular-webfont.woff') format('woff'),
+			 url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-regular-webfont.ttf') format('truetype'),
+			 url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-regular-webfont.svg#pt_sansregular') format('svg');
+		    font-weight: normal;
+		    font-style: normal;
+
+		}
+		@font-face {
+		    font-family: 'Oswald';
+		    src: url('/wp-content/themes/wordpress-bootstrap/font/oswald-light-webfont.eot');
+		    src: url('/wp-content/themes/wordpress-bootstrap/font/oswald-light-webfont.eot?#iefix') format('embedded-opentype'),
+			 url('/wp-content/themes/wordpress-bootstrap/font/oswald-light-webfont.woff') format('woff'),
+			 url('/wp-content/themes/wordpress-bootstrap/font/oswald-light-webfont.ttf') format('truetype'),
+			 url('/wp-content/themes/wordpress-bootstrap/font/oswald-light-webfont.svg#oswaldlight') format('svg');
+		    font-weight: light;
+		    font-style: normal;
+
+		}
+
+
+
+
+		@font-face {
+		    font-family: 'Oswald';
+		    src: url('/wp-content/themes/wordpress-bootstrap/font/oswald-regular-webfont.eot');
+		    src: url('/wp-content/themes/wordpress-bootstrap/font/oswald-regular-webfont.eot?#iefix') format('embedded-opentype'),
+			 url('/wp-content/themes/wordpress-bootstrap/font/oswald-regular-webfont.woff') format('woff'),
+			 url('/wp-content/themes/wordpress-bootstrap/font/oswald-regular-webfont.ttf') format('truetype'),
+			 url('/wp-content/themes/wordpress-bootstrap/font/oswald-regular-webfont.svg#oswaldregular') format('svg');
+		    font-weight: normal;
+		    font-style: normal;
+
+		}
+
+
+	</style>
+
         
         <!-- icons & favicons -->
         <!-- For iPhone 4 -->
@@ -31,12 +123,12 @@
                 
         <!-- media-queries.js (fallback) -->
         <!--[if lt IE 9]>
-            <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>           
+            <script src="<?php echo get_template_directory_uri(); ?>/library/js/css3-mediaqueries.js"></script>           
         <![endif]-->
 
         <!-- html5.js -->
         <!--[if lt IE 9]>
-            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+            <script src="<?php echo get_template_directory_uri(); ?>/library/js/html5.js"></script>           
         <![endif]-->
         
         <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
@@ -46,11 +138,6 @@
 
         <!-- wordpress head functions -->
         <?php wp_head(); ?>
-        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700|PT+Sans:400,700|PT+Sans+Narrow|PT+Sans+Caption|Oswald:400,300,700' rel='stylesheet' type='text/css'>
-
-
-
-
 
         <!-- end of wordpress head -->
 

@@ -15,19 +15,30 @@
 						<?php bones_footer_links(); // Adjust using Menus in Wordpress Admin ?>
 					</nav>
 					
-					<p class="attribution">&copy; <?php bloginfo('name'); ?></p>
+					<p class="pull-right"><a href="/impressum/">Impressum</a></p>
+					<p class="attribution">&copy; <?php bloginfo('name'); ?></p
 				
 				</div> <!-- end #inner-footer -->
 				
 			</footer> <!-- end footer -->
 		
 		</div> <!-- end #container -->
+<!-- Piwik -->
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ?  "https://piwik.piratenfraktion-nrw.de/" : "http://piwik.piratenfraktion-nrw.de/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 5);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img
+src="https://piwik.piratenfraktion-nrw.de/piwik.php?idsite=5"
+style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+
 				
-		<!--[if lt IE 7 ]>
-  			<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-  			<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-		<![endif]-->
-		
 		<?php wp_footer(); // js scripts are inserted using this function ?>
 
 	</body>

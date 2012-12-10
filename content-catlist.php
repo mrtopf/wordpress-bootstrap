@@ -6,9 +6,11 @@
     <section class="post_content">
         <?php the_excerpt(); ?>
     </section> <!-- end article section -->
+    <?php /*
     <footer>
         <p class="meta"><time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_date(); ?></time> <?php _e("by", "bonestheme"); ?> <?php the_author_posts_link(); ?></p>
     </footer> <!-- end article footer -->
+    */ ?>
 </article> <!-- end article -->
 <?php endwhile; ?>  
 <?php endif; ?>  

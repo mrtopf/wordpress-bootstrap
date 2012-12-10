@@ -15,9 +15,9 @@ div.orbit-wrapper div.timer { width: 40px; height: 40px; overflow: hidden; posit
 div.orbit-wrapper span.rotator { display: block; width: 40px; height: 40px; position: absolute; top: 0; left: -20px; background: url('../images/foundation/orbit/rotator-black.png') no-repeat; z-index: 3; }
 div.orbit-wrapper span.rotator.move { left: 0; }
 div.orbit-wrapper span.mask { display: block; width: 20px; height: 40px; position: absolute; top: 0; right: 0; z-index: 2; overflow: hidden; }
-div.orbit-wrapper span.mask.move { width: 40px; left: 0; background: url('../../images/foundation/orbit/timer-black.png') repeat 0 0; }
-div.orbit-wrapper span.pause { display: block; width: 40px; height: 40px; position: absolute; top: 0; left: 0; background: url('../images/foundation/orbit/pause-black.png') no-repeat; z-index: 4; opacity: 0; }
-div.orbit-wrapper span.pause.active { background: url('../../images/foundation/orbit/pause-black.png') no-repeat 0 -40px; }
+div.orbit-wrapper span.mask.move { display: none; width: 40px; left: 0; background: url('../../images/foundation/orbit/timer-black.png') repeat 0 0; }
+div.orbit-wrapper span.pause { display: none; width: 40px; height: 40px; position: absolute; top: 0; left: 0; background: url('../images/foundation/orbit/pause-black.png') no-repeat; z-index: 4; opacity: 0; }
+div.orbit-wrapper span.pause.active { display: none; background: url('../../images/foundation/orbit/pause-black.png') no-repeat 0 -40px; }
 div.orbit-wrapper div.timer:hover span.pause, div.orbit-wrapper span.pause.active { opacity: 1; }
 
 /* Captions ---------------------- */
