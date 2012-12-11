@@ -412,7 +412,7 @@ h4 small { font-size: 14px; }
 //
 
 
-#featured {
+#featured, .homepage-player {
     height: 250px !important;
     overflow: hidden;
     margin-bottom: 17px;
@@ -430,7 +430,16 @@ h4 small { font-size: 14px; }
 
 #aktueller-stream {
     height: 250px;
-    margin-bottom: 13px;
+    margin-bottom: 17px;
+}
+
+.streambox {
+    overflow: auto;
+    text-align: center;
+    margin-top: 10px;
+    .zum-stream-meta {
+        font-size: 12px;
+    }
 }
 
 /*
@@ -833,7 +842,7 @@ img.attachment-full {
     .btn-primary();
 }
 
-#featured { background: url(/images/foundation/orbit/spinner.gif) center center #f4f4f4; height: 300px; }
+#featured { background: url(/images/foundation/orbit/spinner.gif) center center #f4f4f4; height: 300px; overflow: hidden;}
 #featured img { display: none; }
 
 #featured.orbit { background: none; }
