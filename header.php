@@ -14,99 +14,99 @@
                 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<style>
-		@font-face {
-		  font-family: 'FontAwesome';
-		  font-style: normal;
-		  font-weight: 400;
-		  src: url('/wp-content/themes/wordpress-bootstrap/font/fontawesome-webfont.eot?#iefix') format('embedded-opentype'), url('/wp-content/themes/wordpress-bootstrap/font/fontawesome-webfont.woff') format('woff'), url('/wp-content/themes/wordpress-bootstrap/font/fontawesome-webfont.ttf') format('truetype'), url('/wp-content/themes/wordpress-bootstrap/font/fontawesome-webfont.svg#FontAwesome') format('svg');
-		}
-		@font-face {
-		    font-family: 'lato_blackregular';
-		    src: url('/wp-content/themes/wordpress-bootstrap/font/lato-black-webfont.eot');
-		    src: url('/wp-content/themes/wordpress-bootstrap/font/lato-black-webfont.eot?#iefix') format('embedded-opentype'),
-			 url('/wp-content/themes/wordpress-bootstrap/font/lato-black-webfont.woff') format('woff'),
-			 url('/wp-content/themes/wordpress-bootstrap/font/lato-black-webfont.ttf') format('truetype'),
-			 url('/wp-content/themes/wordpress-bootstrap/font/lato-black-webfont.svg#lato_blackregular') format('svg');
-		    font-weight: normal;
-		    font-style: normal;
-		}
-		@font-face {
-		    font-family: 'PT Sans';
-		    src: url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-bold-webfont.eot');
-		    src: url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-bold-webfont.eot?#iefix') format('embedded-opentype'),
-			 url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-bold-webfont.woff') format('woff'),
-			 url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-bold-webfont.ttf') format('truetype'),
-			 url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-bold-webfont.svg#pt_sansbold') format('svg');
-		    font-weight: bold;
-		    font-style: normal;
+    <style>
+        @font-face {
+          font-family: 'FontAwesome';
+          font-style: normal;
+          font-weight: 400;
+          src: url('/wp-content/themes/wordpress-bootstrap/font/fontawesome-webfont.eot?#iefix') format('embedded-opentype'), url('/wp-content/themes/wordpress-bootstrap/font/fontawesome-webfont.woff') format('woff'), url('/wp-content/themes/wordpress-bootstrap/font/fontawesome-webfont.ttf') format('truetype'), url('/wp-content/themes/wordpress-bootstrap/font/fontawesome-webfont.svg#FontAwesome') format('svg');
+        }
+        @font-face {
+            font-family: 'lato_blackregular';
+            src: url('/wp-content/themes/wordpress-bootstrap/font/lato-black-webfont.eot');
+            src: url('/wp-content/themes/wordpress-bootstrap/font/lato-black-webfont.eot?#iefix') format('embedded-opentype'),
+             url('/wp-content/themes/wordpress-bootstrap/font/lato-black-webfont.woff') format('woff'),
+             url('/wp-content/themes/wordpress-bootstrap/font/lato-black-webfont.ttf') format('truetype'),
+             url('/wp-content/themes/wordpress-bootstrap/font/lato-black-webfont.svg#lato_blackregular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'PT Sans';
+            src: url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-bold-webfont.eot');
+            src: url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-bold-webfont.eot?#iefix') format('embedded-opentype'),
+             url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-bold-webfont.woff') format('woff'),
+             url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-bold-webfont.ttf') format('truetype'),
+             url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-bold-webfont.svg#pt_sansbold') format('svg');
+            font-weight: bold;
+            font-style: normal;
 
-		}
+        }
 
-		@font-face {
-		    font-family: 'PT Sans';
-		    src: url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-bolditalic-webfont.eot');
-		    src: url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
-			 url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-bolditalic-webfont.woff') format('woff'),
-			 url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-bolditalic-webfont.ttf') format('truetype'),
-			 url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-bolditalic-webfont.svg#pt_sansbold_italic') format('svg');
-		    font-weight: bold;
-		    font-style: italic;
+        @font-face {
+            font-family: 'PT Sans';
+            src: url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-bolditalic-webfont.eot');
+            src: url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+             url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-bolditalic-webfont.woff') format('woff'),
+             url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-bolditalic-webfont.ttf') format('truetype'),
+             url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-bolditalic-webfont.svg#pt_sansbold_italic') format('svg');
+            font-weight: bold;
+            font-style: italic;
 
-		}
+        }
 
-		@font-face {
-		    font-family: 'PT Sans';
-		    src: url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-italic-webfont.eot');
-		    src: url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-italic-webfont.eot?#iefix') format('embedded-opentype'),
-			 url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-italic-webfont.woff') format('woff'),
-			 url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-italic-webfont.ttf') format('truetype'),
-			 url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-italic-webfont.svg#pt_sansitalic') format('svg');
-		    font-weight: normal;
-		    font-style: italic;
+        @font-face {
+            font-family: 'PT Sans';
+            src: url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-italic-webfont.eot');
+            src: url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-italic-webfont.eot?#iefix') format('embedded-opentype'),
+             url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-italic-webfont.woff') format('woff'),
+             url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-italic-webfont.ttf') format('truetype'),
+             url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-italic-webfont.svg#pt_sansitalic') format('svg');
+            font-weight: normal;
+            font-style: italic;
 
-		}
+        }
 
-		@font-face {
-		    font-family: 'PT Sans';
-		    src: url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-regular-webfont.eot');
-		    src: url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-regular-webfont.eot?#iefix') format('embedded-opentype'),
-			 url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-regular-webfont.woff') format('woff'),
-			 url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-regular-webfont.ttf') format('truetype'),
-			 url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-regular-webfont.svg#pt_sansregular') format('svg');
-		    font-weight: normal;
-		    font-style: normal;
+        @font-face {
+            font-family: 'PT Sans';
+            src: url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-regular-webfont.eot');
+            src: url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-regular-webfont.eot?#iefix') format('embedded-opentype'),
+             url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-regular-webfont.woff') format('woff'),
+             url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-regular-webfont.ttf') format('truetype'),
+             url('/wp-content/themes/wordpress-bootstrap/font/pt_sans-web-regular-webfont.svg#pt_sansregular') format('svg');
+            font-weight: normal;
+            font-style: normal;
 
-		}
-		@font-face {
-		    font-family: 'Oswald';
-		    src: url('/wp-content/themes/wordpress-bootstrap/font/oswald-light-webfont.eot');
-		    src: url('/wp-content/themes/wordpress-bootstrap/font/oswald-light-webfont.eot?#iefix') format('embedded-opentype'),
-			 url('/wp-content/themes/wordpress-bootstrap/font/oswald-light-webfont.woff') format('woff'),
-			 url('/wp-content/themes/wordpress-bootstrap/font/oswald-light-webfont.ttf') format('truetype'),
-			 url('/wp-content/themes/wordpress-bootstrap/font/oswald-light-webfont.svg#oswaldlight') format('svg');
-		    font-weight: light;
-		    font-style: normal;
+        }
+        @font-face {
+            font-family: 'Oswald';
+            src: url('/wp-content/themes/wordpress-bootstrap/font/oswald-light-webfont.eot');
+            src: url('/wp-content/themes/wordpress-bootstrap/font/oswald-light-webfont.eot?#iefix') format('embedded-opentype'),
+             url('/wp-content/themes/wordpress-bootstrap/font/oswald-light-webfont.woff') format('woff'),
+             url('/wp-content/themes/wordpress-bootstrap/font/oswald-light-webfont.ttf') format('truetype'),
+             url('/wp-content/themes/wordpress-bootstrap/font/oswald-light-webfont.svg#oswaldlight') format('svg');
+            font-weight: light;
+            font-style: normal;
 
-		}
-
-
+        }
 
 
-		@font-face {
-		    font-family: 'Oswald';
-		    src: url('/wp-content/themes/wordpress-bootstrap/font/oswald-regular-webfont.eot');
-		    src: url('/wp-content/themes/wordpress-bootstrap/font/oswald-regular-webfont.eot?#iefix') format('embedded-opentype'),
-			 url('/wp-content/themes/wordpress-bootstrap/font/oswald-regular-webfont.woff') format('woff'),
-			 url('/wp-content/themes/wordpress-bootstrap/font/oswald-regular-webfont.ttf') format('truetype'),
-			 url('/wp-content/themes/wordpress-bootstrap/font/oswald-regular-webfont.svg#oswaldregular') format('svg');
-		    font-weight: normal;
-		    font-style: normal;
-
-		}
 
 
-	</style>
+        @font-face {
+            font-family: 'Oswald';
+            src: url('/wp-content/themes/wordpress-bootstrap/font/oswald-regular-webfont.eot');
+            src: url('/wp-content/themes/wordpress-bootstrap/font/oswald-regular-webfont.eot?#iefix') format('embedded-opentype'),
+             url('/wp-content/themes/wordpress-bootstrap/font/oswald-regular-webfont.woff') format('woff'),
+             url('/wp-content/themes/wordpress-bootstrap/font/oswald-regular-webfont.ttf') format('truetype'),
+             url('/wp-content/themes/wordpress-bootstrap/font/oswald-regular-webfont.svg#oswaldregular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+
+        }
+
+
+    </style>
 
         
         <!-- icons & favicons -->
@@ -199,7 +199,7 @@
         
         <div class="container">
             <header id="logo">
-                <div class="pull-right" style="padding: 50px 50px 0 0;">
+                <div id="socialmediaicons">
                     <a href="http://www.facebook.com/PiratenfraktionNRW" title="zur Facebookseite der Fraktion">
                         <img width="32" height="32" alt="Facebook-Icon" src="<?php echo get_template_directory_uri(); ?>/images/icons/facebook-32x32.png">
                     </a>
@@ -210,7 +210,7 @@
                         <img width="32" height="32" alt="YouTube-Icon" src="<?php echo get_template_directory_uri(); ?>/images/icons/youtube-32x32.png">
                     </a>
                 </div>
-                <a title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>">
-                    <img width="580" src="<?php echo get_template_directory_uri(); ?>/images/pp.png">
+                <a title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>" class="logoimg">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/pp.png">
                 </a>
             </header>
