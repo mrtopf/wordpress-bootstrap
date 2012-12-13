@@ -6096,8 +6096,9 @@ ul#recentcomments li,
   height: 32px;
 }
 .author-image-container {
-  display: inline;
+  display: block;
   float: left;
+  width: 70px;
   margin-right: 9px;
 }
 .author-image {
