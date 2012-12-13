@@ -5259,6 +5259,10 @@ header#logo {
 header#logo img {
   max-width: 600px;
 }
+#socialmediaicons {
+  float: right;
+  padding: 50px 0px 0 0;
+}
 .lead {
   font-size: 16px;
   line-height: 24px;
@@ -5591,9 +5595,9 @@ h3 small {
 h4 small {
   font-size: 14px;
 }
-#featured,
-.homepage-player {
-  height: 250px !important;
+#featured-container,
+#aktueller-stream {
+  height: 270px;
   overflow: hidden;
   margin-bottom: 17px;
 }
@@ -5601,13 +5605,8 @@ h4 small {
   margin-left: 0;
 }
 .nostream {
-  height: 250px;
   margin: 0 3px 17px 10px;
   display: block;
-}
-#aktueller-stream {
-  height: 250px;
-  margin-bottom: 17px;
 }
 .streambox {
   overflow: auto;
@@ -5624,32 +5623,13 @@ h4 small {
   display: none;
 }
 .format-quote .post_content {
-  position: relative;
-  background-color: #ffffff;
-  background-image: -moz-linear-gradient(left, #f8f8f8, #ffffff);
-  background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#f8f8f8), to(#ffffff));
-  background-image: -webkit-linear-gradient(left, #f8f8f8, #ffffff);
-  background-image: -o-linear-gradient(left, #f8f8f8, #ffffff);
-  background-image: linear-gradient(to right, #f8f8f8, #ffffff);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff8f8f8', endColorstr='#ffffffff', GradientType=1);
+  background: url(../../images/quotes.png) no-repeat top left;
   margin: 30px 50px 50px 20px;
-  border-left: 10px solid #e0e0e0;
+  min-height: 150px;
   padding: 20px;
   padding-left: 40px;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-style: italic;
-}
-.format-quote .post_content p:before {
-  content: '\201C';
-  font-family: serif;
-  font-style: normal;
-  font-weight: 700;
-  position: absolute;
-  font-size: 475px;
-  top: -210px;
-  left: -5px;
-  color: rgba(0, 0, 0, 0.06);
 }
 .format-quote .post_content p,
 .format-quote .post_content .lead {
@@ -5657,35 +5637,14 @@ h4 small {
   font-size: 20px;
 }
 blockquote {
-  position: relative;
-  background-color: #ffffff;
-  background-image: -moz-linear-gradient(left, #f8f8f8, #ffffff);
-  background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#f8f8f8), to(#ffffff));
-  background-image: -webkit-linear-gradient(left, #f8f8f8, #ffffff);
-  background-image: -o-linear-gradient(left, #f8f8f8, #ffffff);
-  background-image: linear-gradient(to right, #f8f8f8, #ffffff);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff8f8f8', endColorstr='#ffffffff', GradientType=1);
-  z-index: 2;
+  border: 0;
+  background: url(../../images/quotes.png) no-repeat top left;
+  min-height: 150px;
   margin: 30px 50px 50px 20px;
-  border-left: 10px solid #e0e0e0;
   padding: 20px;
   padding-left: 40px;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-style: italic;
-}
-blockquote p:before {
-  content: '\201C';
-  font-family: serif;
-  font-style: normal;
-  font-weight: 700;
-  position: absolute;
-  font-size: 475px;
-  top: -160px;
-  left: -5px;
-  color: #e0e0e0;
-  z-index: -1;
-  color: rgba(0, 0, 0, 0.06);
 }
 blockquote p,
 blockquote .lead {
@@ -6484,4 +6443,93 @@ ul.cat-title-list li {
 }
 .content-politik article .post_content {
   text-overflow: ellipsis;
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+  #featured-container,
+  #aktueller-stream {
+    height: 166px;
+    overflow: hidden;
+    margin-bottom: 17px;
+  }
+  header#logo {
+    margin: 20px 0;
+  }
+  header#logo img {
+    max-width: 500px;
+  }
+  .navbar .container {
+    width: auto;
+    padding: 0 10px;
+  }
+}
+@media (max-width: 767px) {
+  header#logo {
+    margin: 20px 0;
+    float: none;
+  }
+  header#logo .logoimg img {
+    width: 100%;
+  }
+  #socialmediaicons {
+    display: none;
+    float: none;
+    padding: 0 0 20px 0;
+  }
+  .page-header h1 {
+    font-size: 30px;
+  }
+  #aktueller-stream {
+    height: auto;
+  }
+  .nostream {
+    display: none;
+  }
+  #featured-container {
+    width: 100% !important;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-bottom: 17px;
+  }
+  ul.personal-blogs li .personal-blog-content {
+    height: 100px;
+    overflow: hidden;
+  }
+  .fluid-sidebar {
+    border-top: 5px solid #e0e0e0;
+    padding-top: 10px;
+  }
+  .textwidget .btn-block {
+    display: none;
+    width: 250px;
+    margin: 10px auto;
+  }
+  .navbar .btn-navbar {
+    display: block;
+    float: left;
+    clear: none;
+  }
+  .sub-menu {
+    display: none;
+  }
+  .navbar-fixed-top .navbar-inner,
+  .navbar-fixed-bottom .navbar-inner {
+    padding: 0px;
+  }
+  .menu {
+    width: 100%;
+  }
+  .menu li {
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    border-bottom: 1px solid #d96c00;
+  }
+  blockquote,
+  .format-quote .post_content {
+    margin: 30px 20px 40px 10px;
+    padding: 10px;
+    padding-left: 20px;
+    min-height: 200px;
+  }
 }

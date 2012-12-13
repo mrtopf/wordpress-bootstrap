@@ -73,9 +73,11 @@
 
 header#logo {
     margin: 20px 0;
-    img {
-        max-width: 600px;
-    }
+    img { max-width: 600px; }
+}
+#socialmediaicons {
+    float: right;
+    padding: 50px 0px 0 0;
 }
 .lead {
     font-size: 16px;
@@ -412,8 +414,8 @@ h4 small { font-size: 14px; }
 //
 
 
-#featured, .homepage-player {
-    height: 250px !important;
+#featured-container, #aktueller-stream {
+    height: 270px;
     overflow: hidden;
     margin-bottom: 17px;
 }
@@ -423,14 +425,8 @@ h4 small { font-size: 14px; }
 }
 
 .nostream {
-	height: 250px;
-	margin: 0 3px 17px 10px;
-	display: block;
-}
-
-#aktueller-stream {
-    height: 250px;
-    margin-bottom: 17px;
+    margin: 0 3px 17px 10px;
+    display: block;
 }
 
 .streambox {
@@ -451,22 +447,9 @@ h4 small { font-size: 14px; }
         display: none;
     }
     .post_content {
-        position: relative;
-        p:before {
-            content: '\201C';
-            font-family: serif;
-            font-style: normal;
-            font-weight: 700;
-            position: absolute;
-            font-size: 475px;
-            top: -210px;
-            left: -5px;
-            color: rgba(0,0,0,0.06);
-        }
-
-        #gradient.horizontal(#f8f8f8,#ffffff);
+        background: url(../../images/quotes.png) no-repeat top left;
         margin: 30px 50px 50px 20px;
-        border-left: 10px solid #e0e0e0;
+        min-height: 150px;
         padding: 20px;
         padding-left: 40px;
         font-family: @serifFontFamily;
@@ -479,25 +462,10 @@ h4 small { font-size: 14px; }
 }
 
 blockquote {
-        position: relative;
-        p:before {
-            content: '\201C';
-            font-family: serif;
-            font-style: normal;
-            font-weight: 700;
-            position: absolute;
-            font-size: 475px;
-            top: -160px;
-            left: -5px;
-	    color: #e0e0e0;
-	    z-index: -1;
-            color: rgba(0,0,0,0.06);
-        }
-
-        #gradient.horizontal(#f8f8f8,#ffffff);
-	z-index: 2;
+        border: 0;
+        background: url(../../images/quotes.png) no-repeat top left;
+        min-height: 150px;
         margin: 30px 50px 50px 20px;
-        border-left: 10px solid #e0e0e0;
         padding: 20px;
         padding-left: 40px;
         font-family: @serifFontFamily;
@@ -793,12 +761,12 @@ img.attachment-full {
         padding: 0;
         margin-left: 10px;
         display: inline-block;
-	float: left;
+        float: left;
         height: 360px;
         vertical-align: top;
     }
     img {
-	display: block;
+    display: block;
         border: 1px solid #aaa;
         padding: 3px;
         max-width: 130px;
@@ -872,11 +840,11 @@ ul.personal-blogs {
         border-bottom: 1px dashed #ccc;
         margin-bottom: 20px;
         font-size: 14px;
-	.personal-blog-content {
-		height: 200px;
-		overflow: hidden;
-	}
-	.excerpt a { display: none; }
+    .personal-blog-content {
+        height: 200px;
+        overflow: hidden;
+    }
+    .excerpt a { display: none; }
         .post-title {
             font-size: 16px;
         }
@@ -960,4 +928,83 @@ ul.cat-title-list{
             text-overflow: ellipsis;
         }
     }
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+    #featured-container, #aktueller-stream {
+        height: 166px;
+        overflow: hidden;
+        margin-bottom: 17px;
+    }
+    header#logo {
+        margin: 20px 0;
+        img { max-width: 500px; }
+    }
+  .navbar .container {
+    width: auto;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 767px) {
+    header#logo {
+        margin: 20px 0;
+        .logoimg img { width: 100%; }
+        float: none;
+    }
+    #socialmediaicons {
+        display: none;
+        float: none;
+        padding: 0 0 20px 0;
+    }
+    .page-header h1 { font-size: 30px;}
+    #aktueller-stream { height: auto;}
+    .nostream {
+        display: none;
+    }
+    #featured-container{
+        width: 100% !important;
+        overflow: hidden;
+        margin: 0 auto;
+        margin-bottom: 17px;
+    }
+    ul.personal-blogs li .personal-blog-content {
+            height: 100px;
+            overflow: hidden;
+    }
+    .fluid-sidebar {
+        border-top: 5px solid #e0e0e0;
+        padding-top: 10px;
+    }
+    .textwidget .btn-block {
+        display: none;
+        width: 250px;
+        margin: 10px auto;
+        
+    }
+  .navbar .btn-navbar {
+    display: block;
+    float: left;
+    clear: none;
+  }
+  .sub-menu { display: none; }
+  .navbar-fixed-top .navbar-inner, .navbar-fixed-bottom .navbar-inner {
+        padding: 0px;
+    }
+
+  .menu {
+    width: 100%;
+    li { display: block; 
+         width: 100%; 
+         font-size: 20px; 
+         text-align: center;
+         border-bottom: 1px solid darken(@linkColor, 20%) ;
+    }
+  }
+  blockquote, .format-quote .post_content {
+        margin: 30px 20px 40px 10px;
+        padding: 10px;
+        padding-left: 20px;
+        min-height: 200px;
+    }
+
 }
