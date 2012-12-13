@@ -181,7 +181,7 @@
 		<li><a class="name" href="/author/dr-robert-arnold">Dr. Robert Arnold</a></li>
 		<li><a class="name" href="/author/elle-austin">Elle Austin</a></li>
 		<li><a class="name" href="/author/heidemarie-behrens">Heidemarie Behrens</a></li>
-		<li><a class="name" href="/author/mathias-bock">Mathias Bock</a></li>
+		<li><a class="name" href="/author/matthias-bock">Matthias Bock</a></li>
 		<li><a class="name" href="/author/dr-johannes-clessienne">Dr. Johannes Clessienne</a></li>
 		<li><a class="name" href="/author/katrin-clever">Katrin Clever</a></li>
 		<li><a class="name" href="/author/yaroslav-dimont">Yaroslav Dimont</a></li>
