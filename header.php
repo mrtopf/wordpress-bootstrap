@@ -165,6 +165,13 @@
                         <div class="container nav-container">
                             <nav role="navigation">
                                 <a class="brand" id="logo" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
+                            
+                            <?php if(of_get_option('search_bar', '1')) {?>
+                            <form class="navbar-search pull-right" role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
+                                <input name="s" id="s" type="text" class="search-query" autocomplete="off" placeholder="<?php _e('Search','bonestheme'); ?>">
+                            </form>
+                            <?php } ?>
+                            
                                 
                                 <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                                     <span class="icon-bar"></span>
@@ -172,7 +179,7 @@
                                     <span class="icon-bar"></span>
                                 </a>
                                 
-                                <div class="menu-collapse">
+                                <div class="menu-collapse nav-collapse collapse">
                                     <ul class="menu">   
                                     <li class="menu-item">
                                         <a title="Startseite" href="/"><i class="icon-home"></i></a>
@@ -182,13 +189,6 @@
                                 </div>
                                 
                             </nav>
-                            
-                            <?php if(of_get_option('search_bar', '1')) {?>
-                            <form class="navbar-search pull-right" role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
-                                <input name="s" id="s" type="text" class="search-query" autocomplete="off" placeholder="<?php _e('Search','bonestheme'); ?>">
-                            </form>
-                            <?php } ?>
-                            
                         </div>
                     </div>
                 </div>

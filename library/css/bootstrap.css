@@ -6503,4 +6503,33 @@ ul.cat-title-list li {
     width: 250px;
     margin: 10px auto;
   }
+  .navbar .btn-navbar {
+    display: block;
+    float: left;
+    clear: none;
+  }
+  .sub-menu {
+    display: none;
+  }
+  .navbar-fixed-top .navbar-inner,
+  .navbar-fixed-bottom .navbar-inner {
+    padding: 0px;
+  }
+  .menu {
+    width: 100%;
+  }
+  .menu li {
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    border-bottom: 1px solid #d96c00;
+  }
+  blockquote,
+  .format-quote .post_content {
+    margin: 30px 20px 40px 10px;
+    padding: 10px;
+    padding-left: 20px;
+    min-height: 200px;
+  }
 }
