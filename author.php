@@ -101,7 +101,7 @@
             <hr>
 
             <div class="row">
-                <div class="span6">
+                <div class="span5">
                     <h3>Letzte Artikel</h3>
                     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                     <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
@@ -132,7 +132,7 @@
                         </nav>
                     <?php } ?>
                 </div>
-                <div class="span2">
+                <div class="span3">
                     <h3>Kommentare</h3>
                     <?php 
                         $args = array( 'user_id' => $curauth->ID, 'number' => 20);
