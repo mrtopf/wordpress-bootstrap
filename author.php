@@ -179,7 +179,6 @@
             <h3>Fraktionsmitarbeiter</h3>
 	    <ul>
 		<li><a class="name" href="/author/dr-robert-arnold">Dr. Robert Arnold</a></li>
-		<li><a class="name" href="/author/elle-austin">Elle Austin</a></li>
 		<li><a class="name" href="/author/heidemarie-behrens">Heidemarie Behrens</a></li>
 		<li><a class="name" href="/author/matthias-bock">Matthias Bock</a></li>
 		<li><a class="name" href="/author/dr-johannes-clessienne">Dr. Johannes Clessienne</a></li>
@@ -187,13 +186,14 @@
 		<li><a class="name" href="/author/yaroslav-dimont">Yaroslav Dimont</a></li>
 		<li><a class="name" href="/author/bianca-falk">Bianca Falk</a></li>
 		<li><a class="name" href="/author/dr-stefan-hochstadt">Dr. Stefan Hochstadt</a></li>
-		<li><a class="name" href="/author/daniel-horz">Daniel Horz</a></li>
 		<li><a class="name" href="/author/rebecca-japes">Rebecca Japes</a></li>
+		<li><a class="name" href="/author/kaimi">ka’imi</a></li>
 		<li><a class="name" href="/author/tristan-leo">Tristan Leo</a></li>
 		<li><a class="name" href="/author/bjoern-luxat">Björn Luxat</a></li>
 		<li><a class="name" href="/author/nikolas-michaelis">Nikolas Michaelis</a></li>
 		<li><a class="name" href="/author/gerhardt-militzer">Gerhardt Militzer</a></li>
 		<li><a class="name" href="/author//li-millauer">Britta Millauer</a></li>
+		<li><a class="name" href="/author/elle-austin">Elle Nerdinger</a></li>
 		<li><a class="name" href="/author/simone-nissen">Simone Nissen</a></li>
 		<li><a class="name" href="/author/tom-odebrecht">Tom Odebrecht</a></li>
 		<li><a class="name" href="/author/jens-ofiera">Jens Ofiera</a></li>
