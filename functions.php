@@ -100,6 +100,16 @@ function bones_register_sidebars() {
     ));
 
     register_sidebar(array(
+        'id' => 'author',
+        'name' => 'Author Sidebar',
+        'description' => 'used on author pages',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h4 class="widgettitle">',
+        'after_title' => '</h4>',
+    ));
+
+    register_sidebar(array(
         'id' => 'overview',
         'name' => 'Übersicht',
         'description' => 'overview pages',
