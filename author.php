@@ -48,7 +48,7 @@
                             </div>
                         <?php } ?>
                     </div>
-                    <?php if ( ($curauth->user_tw) || ($curauth->user_fb) ) { ?>
+                    <?php if ( ($curauth->user_tw) || ($curauth->user_fb) || ($curauth->identica)) { ?>
                     <div class="authorinfobox">
                         <h5>Social Media</h5>
                         <?php if ($curauth->user_tw) { ?>
@@ -56,6 +56,9 @@
                         <?php } ?>
                         <?php if (get_the_author_meta("user_fb")) { ?>
                                 <a href="<?php echo $curauth->user_fb; ?>"><img src="<?php bloginfo('template_directory') ?>/images/icons/facebook-32x32.png" title="facebook"></a>
+                        <?php } ?>
+                        <?php if ($curauth->identica) { ?>
+                                <a href="<?php echo $curauth->identica; ?>"><img src="<?php bloginfo('template_directory') ?>/images/icons/identica-32x32.png" title="identica"></a>
                         <?php } ?>
                     </div>
                     <?php } ?>
