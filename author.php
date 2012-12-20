@@ -48,7 +48,7 @@
                             </div>
                         <?php } ?>
                     </div>
-                    <?php if ( ($curauth->user_tw) || ($curauth->user_fb) ) { ?>
+                    <?php if ( ($curauth->user_tw) || ($curauth->user_fb) || ($curauth->identica)) { ?>
                     <div class="authorinfobox">
                         <h5>Social Media</h5>
                         <?php if ($curauth->user_tw) { ?>
@@ -56,6 +56,9 @@
                         <?php } ?>
                         <?php if (get_the_author_meta("user_fb")) { ?>
                                 <a href="<?php echo $curauth->user_fb; ?>"><img src="<?php bloginfo('template_directory') ?>/images/icons/facebook-32x32.png" title="facebook"></a>
+                        <?php } ?>
+                        <?php if ($curauth->identica) { ?>
+                                <a href="<?php echo $curauth->identica; ?>"><img src="<?php bloginfo('template_directory') ?>/images/icons/identica-32x32.png" title="identica"></a>
                         <?php } ?>
                     </div>
                     <?php } ?>
@@ -151,62 +154,8 @@
                 </div><!-- span2-->
             </div><!-- row -->
         </div> <!-- end #main -->
-        <div id="sidebar-author" class="sidebar span3" role="complementary">
-            <h3>Abgeordnete</h3>
-            <ul>
-            <li><a class="name" href="/author/oliver-bayer">Oliver Bayer</a></li>
-            <li><a class="name" href="/author/simone-brand">Simone Brand</a></li>
-            <li><a class="name" href="/author/daniel-duengel">Daniel Düngel</a></li>
-            <li><a class="name" href="/author/stefan-fricke">Stefan Fricke</a></li>
-            <li><a class="name" href="/author/frank-herrmann">Frank Herrmann</a></li>
-            <li><a class="name" href="/author/nico-kern">Nico Kern</a></li>
-            <li><a class="name" href="/author/lukas-lamla">Lukas Lamla</a></li>
-            <li><a class="name" href="/author/michele-marsching">Michele Marsching</a></li>
-            <li><a class="name" href="/author/marc-olejak">Marc Olejak</a></li>
-            <li><a class="name" href="/author/joachim-paul">Dr. Joachim Paul</a></li>
-            <li><a class="name" href="/author/monika-pieper">Monika Pieper</a></li>
-            <li><a class="name" href="/author/hanns-joerg-rohwedder">Hanns-Jörg Rohwedder</a></li>
-            <li><a class="name" href="/author/birgit-rydlewski">Birgit Rydlewski</a></li>
-            <li><a class="name" href="/author/dirk-schatz">Dirk Schatz</a></li>
-            <li><a class="name" href="/author/kai-schmalenbach">Kai Schmalenbach</a></li>
-            <li><a class="name" href="/author/dietmar-schulz">Dietmar Schulz</a></li>
-            <li><a class="name" href="/author/daniel-schwerd">Daniel Schwerd</a></li>
-            <li><a class="name" href="/author/torsten-sommer">Torsten Sommer</a></li>
-            <li><a class="name" href="/author/robert-stein">Robert Stein</a></li>
-            <li><a class="name" href="/author/olaf-wegner">Olaf Wegener</a></li>
-            </ul>
 
-            <h3>Fraktionsmitarbeiter</h3>
-	    <ul>
-		<li><a class="name" href="/author/dr-robert-arnold">Dr. Robert Arnold</a></li>
-		<li><a class="name" href="/author/elle-austin">Elle Austin</a></li>
-		<li><a class="name" href="/author/heidemarie-behrens">Heidemarie Behrens</a></li>
-		<li><a class="name" href="/author/mathias-bock">Mathias Bock</a></li>
-		<li><a class="name" href="/author/dr-johannes-clessienne">Dr. Johannes Clessienne</a></li>
-		<li><a class="name" href="/author/katrin-clever">Katrin Clever</a></li>
-		<li><a class="name" href="/author/yaroslav-dimont">Yaroslav Dimont</a></li>
-		<li><a class="name" href="/author/bianca-falk">Bianca Falk</a></li>
-		<li><a class="name" href="/author/dr-stefan-hochstadt">Dr. Stefan Hochstadt</a></li>
-		<li><a class="name" href="/author/daniel-horz">Daniel Horz</a></li>
-		<li><a class="name" href="/author/rebecca-japes">Rebecca Japes</a></li>
-		<li><a class="name" href="/author/tristan-leo">Tristan Leo</a></li>
-		<li><a class="name" href="/author/bjoern-luxat">Björn Luxat</a></li>
-		<li><a class="name" href="/author/nikolas-michaelis">Nikolas Michaelis</a></li>
-		<li><a class="name" href="/author/gerhardt-militzer">Gerhardt Militzer</a></li>
-		<li><a class="name" href="/author//li-millauer">Britta Millauer</a></li>
-		<li><a class="name" href="/author/simone-nissen">Simone Nissen</a></li>
-		<li><a class="name" href="/author/tom-odebrecht">Tom Odebrecht</a></li>
-		<li><a class="name" href="/author/jens-ofiera">Jens Ofiera</a></li>
-		<li><a class="name" href="/author/ute-oltmanns">Ute Oltmanns</a></li>
-		<li><a class="name" href="/author/linus-schade">Linus Schade</a></li>
-		<li><a class="name" href="/author/marco-von-schamann">Marco von Schamann</a></li>
-		<li><a class="name" href="/author/ingo-schneider">Ingo Schneider</a></li>
-		<li><a class="name" href="/author/hilmar-schulz">Hilmar Schulz</a></li>
-		<li><a class="name" href="/author/andrea-spiller">Andrea Spiller</a></li>
-		<li><a class="name" href="/author/sebastian-strock">Sebastian Strock</a></li>
-		<li><a class="name" href="/author/harald-wiese">Harald Wiese</a></li>
-		<li><a class="name" href="/author/daniel-zimmermann">Daniel Zimmermann</a></li>
-	</ul>
+	<?php get_sidebar("author"); // sidebar 1 ?>
 
     </div> <!-- end #content -->
 

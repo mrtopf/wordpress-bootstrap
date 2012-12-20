@@ -517,10 +517,10 @@ function add_active_class($classes, $item) {
 function theme_styles()  
 { 
     // This is the compiled css file from LESS - this means you compile the LESS file locally and put it in the appropriate directory if you want to make any changes to the master bootstrap.css.
-    wp_register_style( 'bootstrap', get_template_directory_uri() . '/library/css/bootstrap.css', array(), '1.1.3', 'all' );
+    wp_register_style( 'bootstrap', get_template_directory_uri() . '/library/css/bootstrap.css', array(), '1.1.6', 'all' );
     wp_register_style( 'orbit', get_template_directory_uri() . '/library/css/orbit.css', array(), '1.0', 'all' );
-    wp_register_style( 'bootstrap-responsive', get_template_directory_uri() . '/library/css/responsive.css', array(), '1.1.2', 'all' );
-    wp_register_style( 'wp-bootstrap', get_template_directory_uri() . '/style.css', array(), '1.1.2', 'all' );
+    wp_register_style( 'bootstrap-responsive', get_template_directory_uri() . '/library/css/responsive.css', array(), '1.1.6', 'all' );
+    wp_register_style( 'wp-bootstrap', get_template_directory_uri() . '/style.css', array(), '1.1.6', 'all' );
     
     wp_enqueue_style( 'bootstrap' );
     wp_enqueue_style( 'bootstrap-responsive' );
