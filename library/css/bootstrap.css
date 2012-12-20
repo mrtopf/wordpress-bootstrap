@@ -5294,6 +5294,13 @@ p.meta a {
   line-height: 1.2;
   font-size: 20px;
 }
+.post_content ul {
+  overflow: auto;
+}
+.post_content ul li {
+  list-style-position: outside;
+  margin-left: 20px;
+}
 .more-link {
   font-size: 18px;
 }
