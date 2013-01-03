@@ -21,7 +21,7 @@
                 <?php if ($curauth->author_image) { ?>
                 <div class="span3">
                     <a href="#" class="thumbnail">
-                        <img src="/wp-content/uploads/autoren/<?php echo $curauth->author_image; ?>.jpg" alt="<?php echo $curauth->display_name?>">
+                        <img src="/wp-content/uploads/autoren/<?php echo $curauth->author_image; ?>-260.jpg" alt="<?php echo $curauth->display_name?>">
                     </a>
                 </div>
                 <?php } ?>
