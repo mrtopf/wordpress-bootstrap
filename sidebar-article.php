@@ -3,7 +3,7 @@
         <h4>Autor</h4>
         <?php if (get_the_author_meta("author_image")) { ?>
             <div class="author-image-container">
-                <img class="author-image" src="/wp-content/uploads/autoren/<?php the_author_meta('author_image'); ?>-200.jpg" title="<?php the_author(); ?>" />
+                <img class="author-image" src="/wp-content/uploads/autoren/<?php the_author_meta('author_image'); ?>-130.jpg" title="<?php the_author(); ?>" />
             </div>
         <?php } ?>
         <div class="author-more-link">
