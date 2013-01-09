@@ -6534,6 +6534,12 @@ ul.cat-title-list li {
     min-height: 200px;
   }
 }
+.ma-container {
+  background: #f0f0f0;
+  padding: 8px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
 .mabox {
   margin-bottom: 25px;
 }
@@ -6544,8 +6550,12 @@ ul.cat-title-list li {
   align: left;
   margin-right: 5px;
 }
+.mabox .ma-item {
+  display: block;
+  font-size: 13px;
+}
 .mabox .ma-name {
   font-weight: bold;
   display: block;
-  align: left;
+  font-size: 16px;
 }

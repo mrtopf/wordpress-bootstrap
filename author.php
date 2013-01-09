@@ -87,11 +87,11 @@
                         </div>
                     <?php } ?>
                 </div>
-		<?php /***
                 <div class="span3">
                 <?php if ($curauth->is_mdl) { 	
                     $mas = explode(",",$curauth->mitarbeiter);
                 ?>
+		<div class="ma-container">
                 <h4>Mitarbeiter</h4>
                 <?php  
                     foreach ($mas as $ma) { 
@@ -101,20 +101,35 @@
                         <?php if ($mao->author_image) { ?>
                             <img src="/wp-content/uploads/autoren/<?php echo $mao->author_image; ?>-64.jpg" alt="<?php echo $mao->display_name?>">
                         <?php } ?>
-                        <span class="ma-name"><?php echo $mao->display_name; ?></span>
+                        <div class="ma-name ma-item"><?php echo $mao->display_name; ?></div>
+			    <?php if ( ($mao->funktionen) ) {
+				$funktionen = explode("\n", $mao->funktionen);
+			    ?>
+				<div class="ma-item">
+					<?php 
+					    foreach ($funktionen as $funktion) { 
+						echo "".$funktion."<br>";
+					    }
+					?>
+				</div>
+			    <?php } ?>
+                        <?php if ($mao->user_email) { ?>
+			<div class="ma-email ma-item">
+				E-Mail: 
+				<a href="mailto:<?php echo $mao->user_email; ?>"><?php echo $mao->user_email; ?></a>
+			</div>
+                        <?php } ?>
                         <?php if ($mao->telefon) { ?>
-                            <span class="ma-phone">Telefon: <?php echo $mao->telefon; ?></span>
+                            <div class="ma-phone ma-item">Telefon: <?php echo $mao->telefon; ?></div>
                         <?php } ?>
                         <?php if ($mao->telefax) { ?>
-                            <span class="ma-fax">Telefax: <?php echo $mao->telefax; ?></span>
+                            <div class="ma-fax ma-item">Telefax: <?php echo $mao->telefax; ?></div>
                         <?php } ?>
                     </div>
-                <?php  
-                    }
-                ?>
+                <?php  } ?>
+                </div>
                 <?php } ?>
                 </div>
-                <?php ***/ ?>
             </div>
 
 	    <?php if ( ($curauth->description) ) { ?>
