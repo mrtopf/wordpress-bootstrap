@@ -176,9 +176,8 @@ h1, h2, h3, h4, h5, h6 {
     left:0;
     position:absolute;
     top:0;
-    visibility:hidden;
+    visibility: hidden;
     z-index:10;
-    
 }
 
 .menu li:hover > ul {
@@ -997,7 +996,39 @@ ul.cat-title-list{
     float: left;
     clear: none;
   }
+
+  .menu li.current-menu-item { display: block; }
   .sub-menu { display: none; }
+  li.current-menu-item ul.sub-menu { 
+    display: block; 
+    visibility: visible;
+  }
+  li.current-menu-ancestor ul.sub-menu { 
+    display: block; 
+    visibility: visible;
+  }
+  li.current-menu-item ul.sub-menu li { 
+    display: block;
+  }
+    .menu ul {
+        position: static;
+        margin: 0 -5px;
+        padding: 0;
+    }
+    .menu li li {
+        background:#fff;
+        background-image:none;
+        border:1px solid #b2b2b2;
+        filter:none;
+        position: static;
+        display: block;
+        width: 100%;
+        float: none;
+        color: #333;
+        border-bottom:none;
+        font-size: 24px;
+    }
+
   .navbar-fixed-top .navbar-inner, .navbar-fixed-bottom .navbar-inner {
         padding: 0px;
     }
@@ -1022,18 +1053,18 @@ ul.cat-title-list{
 
 // ma-box
 .mabox {
-	margin-bottom: 25px;
-	img {
-		border: 2px solid #ccc;
-		padding: 2px;
-		display: block;
-		align: left;
-		margin-right: 5px;
-	}
-	.ma-name {
-		font-weight: bold;
-		display: block;
-		align: left;
-	}
+    margin-bottom: 25px;
+    img {
+        border: 2px solid #ccc;
+        padding: 2px;
+        display: block;
+        align: left;
+        margin-right: 5px;
+    }
+    .ma-name {
+        font-weight: bold;
+        display: block;
+        align: left;
+    }
 
 }
