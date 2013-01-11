@@ -5294,6 +5294,10 @@ p.meta a {
   line-height: 1.2;
   font-size: 20px;
 }
+.post_content {
+  margin-bottom: 10px;
+  border-bottom: 2px dashed #ccc;
+}
 .post_content ul {
   overflow: auto;
 }
