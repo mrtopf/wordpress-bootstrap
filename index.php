@@ -12,7 +12,9 @@
                         <header>
                             <h1 class="h2">
                                     <?php if (in_category("mitmachen")): ?>
+                                        <a href="<?php the_permalink() ?>" rel="bookmark" alt="Mitmachen" title="Mitmachen bei <?php the_title_attribute(); ?>">
                                         <span class="mitmachen">Mitmachen!</span>
+                                        </a>
                                     <?php endif ?>
                             <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
                                     <?php if (in_category("diskussion")): ?>
