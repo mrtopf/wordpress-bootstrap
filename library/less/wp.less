@@ -115,6 +115,18 @@ p.meta {
 
 }
 
+.post_content {
+    ul {
+        overflow: auto;
+        li { 
+            list-style-position: outside;
+        margin-left: 20px;
+        }
+    }
+    margin-bottom: 10px;
+    border-bottom: 2px dashed #ccc;
+}
+
 .more-link {
     font-size: 18px;
 }
@@ -166,9 +178,8 @@ h1, h2, h3, h4, h5, h6 {
     left:0;
     position:absolute;
     top:0;
-    visibility:hidden;
+    visibility: hidden;
     z-index:10;
-    
 }
 
 .menu li:hover > ul {
@@ -462,19 +473,19 @@ h4 small { font-size: 14px; }
 }
 
 blockquote {
-        border: 0;
-        background: url(../../images/quotes.png) no-repeat top left;
-        min-height: 150px;
-        margin: 30px 50px 50px 20px;
-        padding: 20px;
-        padding-left: 40px;
-        font-family: @serifFontFamily;
-        font-style: italic;
-        p, .lead {
-            line-height: 1.6;
-            font-size: 20px;
-        }
+    border: 0;
+    background: url(../../images/quotes.png) no-repeat top left;
+    min-height: 150px;
+    margin: 30px 50px 50px 20px;
+    padding: 20px;
+    padding-left: 40px;
+    font-family: @serifFontFamily;
+    font-style: italic;
+    p, .lead {
+        line-height: 1.6;
+        font-size: 20px;
     }
+}
 
 
 /* comments */
@@ -987,7 +998,39 @@ ul.cat-title-list{
     float: left;
     clear: none;
   }
+
+  .menu li.current-menu-item { display: block; }
   .sub-menu { display: none; }
+  li.current-menu-item ul.sub-menu { 
+    display: block; 
+    visibility: visible;
+  }
+  li.current-menu-ancestor ul.sub-menu { 
+    display: block; 
+    visibility: visible;
+  }
+  li.current-menu-item ul.sub-menu li { 
+    display: block;
+  }
+    .menu ul {
+        position: static;
+        margin: 0 -5px;
+        padding: 0;
+    }
+    .menu li li {
+        background:#fff;
+        background-image:none;
+        border:1px solid #b2b2b2;
+        filter:none;
+        position: static;
+        display: block;
+        width: 100%;
+        float: none;
+        color: #333;
+        border-bottom:none;
+        font-size: 24px;
+    }
+
   .navbar-fixed-top .navbar-inner, .navbar-fixed-bottom .navbar-inner {
         padding: 0px;
     }
@@ -1035,5 +1078,4 @@ ul.cat-title-list{
 		display: block;
 		font-size: 16px;
 	}
-
 }
