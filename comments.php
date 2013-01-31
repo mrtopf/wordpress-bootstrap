@@ -82,8 +82,6 @@ The comments page for Bones
 
 <section id="respond" class="respond-form">
 
-    <h3 id="comment-form-title"><?php comment_form_title( __("Leave a Reply","bonestheme"), __("Leave a Reply to","bonestheme") . ' %s' ); ?></h3>
-
     <div id="cancel-comment-reply">
         <p class="small"><?php cancel_comment_reply_link( __("Cancel","bonestheme") ); ?></p>
     </div>
@@ -96,63 +94,26 @@ The comments page for Bones
 
     <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" class="form-vertical" id="commentform">
 
-    <?php if ( is_user_logged_in() ) : ?>
-
-    <p class="comments-logged-in-as"><?php _e("Logged in as","bonestheme"); ?> <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php _e("Log out of this account","bonestheme"); ?>"><?php _e("Log out","bonestheme"); ?> &raquo;</a></p>
-
-    <?php else : ?>
-    
-    <ul id="comment-form-elements" class="clearfix">
+        <?php 
+            $args = array(
+                'id_form' => 'commentform',
+                'id_submit' => 'submit',
+                'title_reply' => __( 'Leave a Reply' ),
+                'title_reply_to' => __( 'Leave a Reply to %s' ),
+                'cancel_reply_link' => __( 'Cancel Reply' ),
+                'label_submit' => __( 'Post Comment' ),
+                'comment_field' => '<div class="clearfix comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun' ) . '</label><div class="input"><textarea class="span5" id="comment" name="comment" cols="80" rows="5" placeholder="Dein Kommentar hier!" aria-required="true"></textarea></div></div>',
+                'must_log_in' => '<p class="must-log-in">' .  sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( ) ) ) ) . '</p>',
+                'logged_in_as' => '<p class="logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) ) ) . '</p>',
+                'comment_notes_before' => '<p class="comment-notes">' . __( 'Your email address will not be published.' ) . ( $req ? $required_text : '' ) . '</p>',
+                'comment_notes_after' => '<p class="form-allowed-tags">' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s' ), ' <code>' . allowed_tags() . '</code>' ) . '</p>',
+                'fields' => apply_filters( 'comment_form_default_fields', array(
+                    'author' => '<div class="control-group comment-form-author">' . '<label for="author">' . __( 'Name', 'domainreference' ) .  ( $req ? ' (notwendig)' : '' ) .  '</label> ' .  '<div class="input-prepend"><span class="add-on"><i class="icon-user"></i></span><input placeholder="Dein Name" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></div></div>',
+                    'email' => '<div class="control-group comment-form-email">' . '<label for="email">' . __( 'Email', 'domainreference' ) .  ( $req ? ' (notwendig)' : '' ) .  '</label> ' .  '<div class="input-prepend"><span class="add-on"><i class="icon-envelope"></i></span><input placeholder="Deine E-Mail" id="email" name="email" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></div></div>',
+                    'url' => '<div class="control-group comment-form-url">' . '<label for="url">' . __( 'Website', 'domainreference' ) . '</label> ' .  '<div class="input-prepend"><span class="add-on"><i class="icon-home"></i></span><input placeholder="Deine Homepage" id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30"' . $aria_req . ' /></div></div>') ) );
         
-        <li>
-            <div class="control-group">
-              <label for="author"><?php _e("Name","bonestheme"); ?> <?php if ($req) echo "(required)"; ?></label>
-              <div class="input-prepend">
-                <span class="add-on"><i class="icon-user"></i></span><input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" placeholder="<?php _e("Your Name","bonestheme"); ?>" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
-              </div>
-            </div>
-        </li>
-        
-        <li>
-            <div class="control-group">
-              <label for="email"><?php _e("Mail","bonestheme"); ?> <?php if ($req) echo "(required)"; ?></label>
-              <div class="input-prepend">
-                <span class="add-on"><i class="icon-envelope"></i></span><input type="email" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" placeholder="<?php _e("Your Email","bonestheme"); ?>" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
-                <span class="help-inline">(<?php _e("will not be published","bonestheme"); ?>)</span>
-              </div>
-            </div>
-        </li>
-        
-        <li>
-            <div class="control-group">
-              <label for="url"><?php _e("Website","bonestheme"); ?></label>
-              <div class="input-prepend">
-              <span class="add-on"><i class="icon-home"></i></span><input type="url" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" placeholder="<?php _e("Your Website","bonestheme"); ?>" tabindex="3" />
-              </div>
-            </div>
-        </li>
-        
-    </ul>
-
-    <?php endif; ?>
-    
-    <div class="clearfix">
-        <div class="input">
-            <textarea class="span5" rows="5" cols="80" name="comment" id="comment" placeholder="Dein Kommentar hier!" tabindex="4"></textarea>
-        </div>
-    </div>
-    
-    <div class="form-noactions">
-      <input class="btn btn-primary" name="submit" type="submit" id="submit" tabindex="5" value="Kommentar absenden" />
-      <?php comment_id_fields(); ?>
-    </div>
-    
-    <?php 
-        //comment_form();
-        do_action('comment_form()', $post->ID); 
-    
-    ?>
-    
+            comment_form($args); 
+        ?>
     </form>
     
     <?php endif; // If registration required and not logged in ?>

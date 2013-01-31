@@ -881,3 +881,40 @@ function new_excerpt_more($more) {
 add_filter('excerpt_more', 'new_excerpt_more');
 
 
+/*
+ * commenting
+ */
+
+function error_processor() {
+    if ( '' == $_POST['comment'] )
+        $comment_error = 'nocomment';
+    else
+        $comment_error = '';
+    // Grab post ID to redirect to
+    $comment_post_ID = (int) $_POST['comment_post_ID'];
+
+    wp_redirect(
+        home_url() . '?comment_error=' . $comment_error . '&p=' . $comment_post_ID . '#respond', // URL to redirect to
+        302 // Temporary redirect
+    );
+    exit;
+}
+
+function error_notice() {
+    if ( empty( $_GET['comment_error'] ) )
+                return;
+
+    if ( 'nocomment' == $_GET['comment_error'] )
+        $comment_notice = __( '<strong>Fehler:</strong> Bitte fülle alle notwendigen Felder aus.', 'comment_errors' );
+    else
+        $comment_notice = __( '<strong>Fehler:</strong> Leider ist ein Fehler bei Deinem Kommentar aufgetreten, bitte überprüfe alle Felder.', 'comment_errors' );
+    
+    echo '<div class="alert alert-danger" id="comments-error-message"><p>' . $comment_notice . '</p></div>';
+}
+
+add_action( 'wp_die_handler',   'error_processor' );
+add_action( 'comment_form_top', 'error_notice' );
+
+
+
+
