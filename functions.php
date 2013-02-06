@@ -555,6 +555,7 @@ function theme_js(){
   wp_register_script('orbit', get_template_directory_uri().'/library/js/jquery.foundation.orbit.js');
   wp_register_script('placeholder', get_template_directory_uri().'/library/js/jquery.placeholder.min.js');
   wp_register_script('ellipsis', get_template_directory_uri().'/library/js/jquery.autoellipsis-1.0.10.min.js');
+  wp_register_script('val_messages', get_template_directory_uri().'/library/js/messages_de.js');
 
   // wp_enqueue_script('less', array(''), '1.3.0', true);
   wp_enqueue_script('jquery');
@@ -575,6 +576,7 @@ function theme_js(){
   wp_enqueue_script('orbit', array('jQuery'), '1.1', true);
   wp_enqueue_script('placeholder', array('jQuery'), '1.1', true);
   wp_enqueue_script('ellipsis', array('jQuery'), '1.1', true);
+  wp_enqueue_script('val_messages', array('jQuery'), '1.1', true);
 }
 add_action('wp_enqueue_scripts', 'theme_js');
 
@@ -879,5 +881,4 @@ function new_excerpt_more($more) {
     return ' ... <a class="read-more" href="'. get_permalink($post->ID) . '">Weiterlesen &raquo;</a>';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
-
 

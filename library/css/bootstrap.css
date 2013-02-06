@@ -5663,6 +5663,146 @@ blockquote .lead {
   font-size: 20px;
 }
 /* comments */
+#recaptcha-submit-btn-area {
+  margin-top: 20px;
+}
+#recaptcha-submit-btn-area input {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+
+  *zoom: 1;
+  padding: 4px 12px;
+  margin-bottom: 0;
+  font-size: 16px;
+  line-height: 24px;
+  *line-height: 24px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  color: #333333;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  background-color: #f5f5f5;
+  background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+  border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+  *background-color: #e6e6e6;
+  border: 1px solid #bbbbbb;
+  *border: 0;
+  border-bottom-color: #a2a2a2;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  *margin-left: .3em;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  border-color: #c5c5c5;
+  border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #f08b26;
+  background-image: -moz-linear-gradient(top, #ff9f40, #d96c00);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ff9f40), to(#d96c00));
+  background-image: -webkit-linear-gradient(top, #ff9f40, #d96c00);
+  background-image: -o-linear-gradient(top, #ff9f40, #d96c00);
+  background-image: linear-gradient(to bottom, #ff9f40, #d96c00);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffff9f40', endColorstr='#ffd96c00', GradientType=0);
+  border-color: #d96c00 #d96c00 #8d4600;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #d96c00;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+#recaptcha-submit-btn-area input [class^="icon-"],
+#recaptcha-submit-btn-area input [class*=" icon-"] {
+  /* keeps button heights with and without icons the same */
+
+  line-height: .9em;
+}
+#recaptcha-submit-btn-area input:hover,
+#recaptcha-submit-btn-area input:active,
+#recaptcha-submit-btn-area input.active,
+#recaptcha-submit-btn-area input.disabled,
+#recaptcha-submit-btn-area input[disabled] {
+  color: #333333;
+  background-color: #e6e6e6;
+  *background-color: #d9d9d9;
+}
+#recaptcha-submit-btn-area input:active,
+#recaptcha-submit-btn-area input.active {
+  background-color: #cccccc \9;
+}
+#recaptcha-submit-btn-area input:first-child {
+  *margin-left: 0;
+}
+#recaptcha-submit-btn-area input:hover {
+  color: #333333;
+  text-decoration: none;
+  background-color: #e6e6e6;
+  *background-color: #d9d9d9;
+  /* Buttons in IE7 don't get borders, so darken on hover */
+
+  background-position: 0 -15px;
+  -webkit-transition: background-position 0.1s linear;
+  -moz-transition: background-position 0.1s linear;
+  -o-transition: background-position 0.1s linear;
+  transition: background-position 0.1s linear;
+}
+#recaptcha-submit-btn-area input:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+#recaptcha-submit-btn-area input.active,
+#recaptcha-submit-btn-area input:active {
+  background-color: #e6e6e6;
+  background-color: #d9d9d9 \9;
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+}
+#recaptcha-submit-btn-area input.disabled,
+#recaptcha-submit-btn-area input[disabled] {
+  cursor: default;
+  background-color: #e6e6e6;
+  background-image: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+#recaptcha-submit-btn-area input .label,
+#recaptcha-submit-btn-area input .badge {
+  position: relative;
+  top: -1px;
+}
+#recaptcha-submit-btn-area input:hover,
+#recaptcha-submit-btn-area input:active,
+#recaptcha-submit-btn-area input.active,
+#recaptcha-submit-btn-area input.disabled,
+#recaptcha-submit-btn-area input[disabled] {
+  color: #ffffff;
+  background-color: #d96c00;
+  *background-color: #c05f00;
+}
+#recaptcha-submit-btn-area input:active,
+#recaptcha-submit-btn-area input.active {
+  background-color: #a65300 \9;
+}
+#recaptcha-submit-btn-area input .caret {
+  border-top-color: #ffffff;
+  border-bottom-color: #ffffff;
+}
 .media-list .media-list {
   margin-left: 74px;
   margin-top: 10px;
