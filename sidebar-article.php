@@ -1,4 +1,8 @@
 <div id="sidebar-article" class="fluid-sidebar sidebar span3" role="complementary">
+    <?php
+        $show_authorbox = get_post_meta( $post->ID, '_pp_show_authorbox', true);
+        if ($show_authorbox) {
+    ?>
     <div class="author-box">
         <h4>Autor</h4>
         <?php if (get_the_author_meta("author_image")) { ?>
@@ -10,6 +14,9 @@
             <a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>"><?php the_author_meta('display_name'); ?></a><br>
         </div>
     </div>
+    <?php
+        }
+    ?>
     
     <?php if ( is_active_sidebar( 'article' ) ) : ?>
 

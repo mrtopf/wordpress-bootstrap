@@ -882,3 +882,40 @@ function new_excerpt_more($more) {
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
+
+
+
+/*
+ * metabox for showing or not showing the author box in the sidebar
+ */
+
+add_action( 'add_meta_boxes', 'pp_show_authorbox_meta' );
+
+function pp_show_authorbox_meta() {
+    add_meta_box( 'pp_meta', 'Autorenbox anzeigen', 'pp_show_authorbox_checkbox_meta', 'post', 'side', 'high' );
+}
+
+function pp_show_authorbox_checkbox_meta( $post ) {
+    $show_authorbox = get_post_meta( $post->ID, '_pp_show_authorbox', true);
+    if ($show_authorbox) {
+        echo "<input id='pp_showbox' type='checkbox' name='pp_show_authorbox' value='1' checked>";
+    } else  {
+        echo "<input id='pp_showbox' type='checkbox' name='pp_show_authorbox' value='1'>";
+    }
+    echo " <label for='pp_showbox'>Zeige die Autorenbox im Sidebar an</label>";
+}
+
+add_action( 'save_post', 'pp_save_authorbox_meta' );
+function pp_save_authorbox_meta( $post_ID ) {
+    global $post;
+    if( $post->post_type == "post" ) {
+        if (isset( $_POST ) ) {
+            if ($_POST['pp_show_authorbox']) {
+                update_post_meta( $post_ID, '_pp_show_authorbox', 1 );
+            } else {
+                update_post_meta( $post_ID, '_pp_show_authorbox', 0 );
+            }
+        }
+    }
+}
+
