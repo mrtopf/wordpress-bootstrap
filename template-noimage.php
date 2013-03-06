@@ -50,7 +50,7 @@
                             <?php endif; ?>
 
 
-
+                            <?php if ( function_exists('socialshareprivacy') ) { socialshareprivacy(); } ?>
 
                             
                             <?php 
