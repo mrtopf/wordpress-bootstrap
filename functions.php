@@ -872,6 +872,8 @@ function my_new_contactmethods( $contactmethods ) {
   $contactmethods['telefax'] = 'Faxnummer';
   $contactmethods['identica'] = 'Identica-Account';
   $contactmethods['ausschuesse'] = 'Komma-separierte Liste der Ausschuss-IDs';
+  $contactmethods['gpg_key'] = 'GPG Schlüssel ID';
+  $contactmethods['gpg_fingerprint'] = 'GPG Schlüssel Fingerabdruck';
   return $contactmethods;
 }
 add_filter('user_contactmethods','my_new_contactmethods',10,1);
