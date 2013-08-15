@@ -35,18 +35,26 @@
                         <?php if ( ($curauth->user_email) && ($curauth->is_mdl)) { ?>
                             <div class="author-email author-info">
                                 E-Mail: <a href="mailto:<?php echo $curauth->user_email; ?>"><?php echo $curauth->user_email; ?></a><br>
+				
                             </div>
                         <?php } ?>
+			<?php if ($curauth->gpg_key) { ?>
+				<div class="author-gpg author-info">
+					GPG Key ID: <?php echo $curauth->gpg_key; ?><br/>
+					GPG Fingerabdruck:<br/><?php echo $curauth->gpg_fingerprint; ?><br/>
+				</div>
+			<?php } ?>
                         <?php if ($curauth->telefon) { ?>
                             <div class="author-telephone author-info">
-                                Telefon: <?php echo $curauth->telefon; ?></a>
+                                Telefon: <?php echo $curauth->telefon; ?>
                             </div>
                         <?php } ?>
                         <?php if ($curauth->telefax) { ?>
                             <div class="author-telefax author-info">
-                                Telefax: <?php echo $curauth->telefax; ?></a>
+                                Telefax: <?php echo $curauth->telefax; ?>
                             </div>
                         <?php } ?>
+			
                     </div>
                     <?php if ( ($curauth->user_tw) || ($curauth->user_fb) || ($curauth->identica)) { ?>
                     <div class="authorinfobox">
