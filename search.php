@@ -8,7 +8,7 @@
                         
                         <header>
                             <h3><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-                            <p class="meta">Veröffentlicht am <time datetime="<?php echo the_time('d.m.Y'); ?>" pubdate><?php the_date(); ?></time> von <?php the_author_posts_link(); ?> in <?php the_category(', '); ?>.</p>
+                            <p class="meta">Veröffentlicht am <time datetime="<?php echo the_time('d.m.Y'); ?>"><?php the_date(); ?></time> von <?php the_author_posts_link(); ?> in <?php the_category(', '); ?>.</p>
                         </header> <!-- end article header -->
                     
                         <section class="post_content">

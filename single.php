@@ -10,7 +10,7 @@
                         
                         <header>
                             <div class="page-header"><h1 class="single-title" itemprop="headline"><?php the_title(); ?></h1></div>
-                            <p class="meta">Veröffentlicht am <time datetime="<?php echo the_time('j.m.Y'); ?>" pubdate><?php the_date(); ?></time> von 
+                            <p class="meta">Veröffentlicht am <time datetime="<?php echo the_time('j.m.Y'); ?>"><?php the_date(); ?></time> von 
                             <?php 
                             if(function_exists('coauthors_posts_links')):
                                 coauthors_posts_links(",", " und ");

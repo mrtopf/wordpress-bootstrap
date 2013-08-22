@@ -5253,10 +5253,12 @@ a.badge:hover {
 .navbar .brand {
   display: none;
 }
-header#logo {
+header#logo,
+header#socialmedia {
   margin: 20px 0;
 }
-header#logo img {
+header#logo img,
+header#socialmedia img {
   max-width: 600px;
 }
 #socialmediaicons {
@@ -5456,6 +5458,13 @@ ul.menu ul li:last-child {
   padding: 12px 0;
   border-bottom: 1px solid #ECECEC;
   word-break: break-word;
+}
+.menu-item a {
+  outline: none;
+}
+.menu-item a:focus {
+  background-color: #271700;
+  color: white;
 }
 ul.menu ul li:last-child a {
   border-bottom: none;
@@ -6201,11 +6210,13 @@ h1 .label {
 .widget .widgettitle {
   margin-bottom: 15px;
 }
+ul.recentcomments,
 ul#recentcomments,
 .widget_recent_entries ul {
   padding: 0;
   margin: 0;
 }
+ul.recentcomments li,
 ul#recentcomments li,
 .widget_recent_entries ul li {
   margin-left: 0;

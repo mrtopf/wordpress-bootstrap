@@ -85,40 +85,40 @@ class PPCategoryPosts extends WP_Widget {
             $cat_posts->the_post();
         ?>
             <li class="cat-post-item">
-		<div class="author-post-link">
-		<?php the_author_posts_link(); ?>
-		</div>
-		<div class="personal-blog-content">
-                <a class="post-title" href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+                <div class="author-post-link">
+                    <?php the_author_posts_link(); ?>
+                </div>
+                <div class="personal-blog-content">
+                    <a class="post-title" href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
                 
-                <?php
-                    if (
-                        function_exists('the_post_thumbnail') &&
-                        current_theme_supports("post-thumbnails") &&
-                        $instance["thumb"] &&
-                        has_post_thumbnail()
-                    ) :
-                ?>
-                    <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                    <?php the_post_thumbnail( 'cat_post_thumb_size'.$this->id ); ?>
-                    </a>
-                <?php endif; ?>
+                    <?php
+                        if (
+                            function_exists('the_post_thumbnail') &&
+                            current_theme_supports("post-thumbnails") &&
+                            $instance["thumb"] &&
+                            has_post_thumbnail()
+                        ) :
+                    ?>
+                        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                            <?php the_post_thumbnail( 'cat_post_thumb_size'.$this->id ); ?>
+                        </a>
+                    <?php endif; ?>
 
-                <?php if ( $instance['date'] ) : ?>
-                <p class="post-date"><?php the_time("j M Y"); ?></p>
-                <?php endif; ?>
-                
-                <?php if ( $instance['excerpt'] ) : ?>
-		<div class="excerpt">
-                <?php the_excerpt(); ?> 
-		</div>
-		</div>
-		<a href="<?php the_permalink(); ?>">Weiterlesen <span>»</span></a>
-                <?php endif; ?>
-                
-                <?php if ( $instance['comment_num'] ) : ?>
-                <p class="comment-num">(<?php comments_number(); ?>)</p>
-                <?php endif; ?>
+                    <?php if ( $instance['date'] ) : ?>
+                        <p class="post-date"><?php the_time("j M Y"); ?></p>
+                    <?php endif; ?>
+                    
+                    <?php if ( $instance['excerpt'] ) : ?>
+                        <div class="excerpt">
+                            <?php the_excerpt(); ?> 
+                        </div>
+                        <a href="<?php the_permalink(); ?>">Weiterlesen <span>»</span></a>
+                    <?php endif; ?>
+                    
+                    <?php if ( $instance['comment_num'] ) : ?>
+                        <p class="comment-num">(<?php comments_number(); ?>)</p>
+                    <?php endif; ?>
+                </div>
             </li>
         <?php
         }

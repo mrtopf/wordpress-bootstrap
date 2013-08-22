@@ -161,7 +161,7 @@
                     <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
                         <header>
                             <h3 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-                            <p class="meta"><time datetime="<?php echo the_time('d.m.Y'); ?>" pubdate><?php the_date(); ?></time></p>
+                            <p class="meta"><time datetime="<?php echo the_time('d.m.Y'); ?>"><?php the_date(); ?></time></p>
                         
                         </header> <!-- end article header -->
                     

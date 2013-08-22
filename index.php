@@ -12,7 +12,7 @@
                         <header>
                             <h1 class="h2">
                                     <?php if (in_category("mitmachen")): ?>
-                                        <a href="<?php the_permalink() ?>" rel="bookmark" alt="Mitmachen" title="Mitmachen bei <?php the_title_attribute(); ?>">
+                                        <a href="<?php the_permalink() ?>" rel="bookmark" title="Mitmachen bei <?php the_title_attribute(); ?>">
                                         <span class="mitmachen">Mitmachen!</span>
                                         </a>
                                     <?php endif ?>
@@ -24,7 +24,7 @@
                                         <span class="label label-position">POSITION</span>
                                     <?php endif ?>
                             </h1>
-                            <p class="meta">Veröffentlicht am <time datetime="<?php echo the_time('j.m.Y'); ?>" pubdate><?php echo the_time('j.m.Y'); ?></time> von 
+                            <p class="meta">Veröffentlicht am <time datetime="<?php echo the_time('Y-m-d'); ?>"><?php echo the_time('j.m.Y'); ?></time> von 
                             <?php if(function_exists('coauthors_posts_links'))
                                 coauthors_posts_links(",", " und ");
                             else

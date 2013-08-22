@@ -17,7 +17,7 @@
                     <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
                         <header>
                             <h3 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-                            <p class="meta">Veröffentlicht am <time datetime="<?php echo the_time('d.m.Y'); ?>" pubdate><?php echo the_time("d.m.Y"); ?></time> <?php _e("by", "bonestheme"); ?> <?php the_author_posts_link(); ?> unter <?php the_category(', '); ?>.</p>
+                            <p class="meta">Veröffentlicht am <time datetime="<?php echo the_time('d.m.Y'); ?>"><?php echo the_time("d.m.Y"); ?></time> <?php _e("by", "bonestheme"); ?> <?php the_author_posts_link(); ?> unter <?php the_category(', '); ?>.</p>
                         </header> <!-- end article header -->
                     
                         <section class="post_content">

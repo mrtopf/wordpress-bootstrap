@@ -71,7 +71,7 @@
     display: none;
 }
 
-header#logo {
+header#logo, header#socialmedia {
     margin: 20px 0;
     img { max-width: 600px; }
 }
@@ -299,6 +299,14 @@ ul.menu ul li:last-child {   border-bottom:1px solid #b2b2b2;
   padding: 12px 0;
   border-bottom: 1px solid #ECECEC;
   word-break: break-word;
+}
+
+.menu-item a {
+    outline: none;
+}
+.menu-item a:focus {
+    background-color: darken(@navbarBackground, 40%);
+    color: white;
 }
 
 
@@ -652,7 +660,7 @@ h1 .label {
     }
 }
 
-ul#recentcomments, .widget_recent_entries ul {
+ul.recentcomments, ul#recentcomments, .widget_recent_entries ul {
     padding: 0;
     margin: 0;
     li {

@@ -198,7 +198,7 @@
         </header> <!-- end header -->
         
         <div class="container">
-            <header id="logo">
+            <header id="socialmedia">
                 <div id="socialmediaicons">
                     <a href="http://www.facebook.com/PiratenfraktionNRW" title="zur Facebookseite der Fraktion">
                         <img width="32" height="32" alt="Facebook-Icon" src="<?php echo get_template_directory_uri(); ?>/images/icons/facebook-32x32.png">
@@ -211,6 +211,6 @@
                     </a>
                 </div>
                 <a title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>" class="logoimg">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/pp.png">
+                    <img alt="Piratenfraktion NRW" src="<?php echo get_template_directory_uri(); ?>/images/pp.png">
                 </a>
             </header>
