@@ -1,1 +1,0 @@
-Bildungspolitische Sprecherin der Piratenfraktion im Landtag NRW Frauenpolitische Sprecherin der Piratenfraktion im Landtag NRW Sprecherin im <a href="/category/a03">Ausschuss fŸr Frauen, Gleichstellung und Emanzipation</a> Ordentliches Mitglied im <a h
