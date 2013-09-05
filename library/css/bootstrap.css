@@ -5463,8 +5463,8 @@ ul.menu ul li:last-child {
   outline: none;
 }
 .menu-item a:focus {
-  background-color: #271700;
-  color: white;
+  font-weight: bold;
+  color: black;
 }
 ul.menu ul li:last-child a {
   border-bottom: none;
@@ -5473,6 +5473,10 @@ ul.menu ul li:last-child a {
   background-image: none;
   color: #000000;
   filter: none;
+}
+.menu-item li li a:focus {
+  background-color: #271700;
+  color: white;
 }
 .menu ul > li + li {
   border-top: 0;

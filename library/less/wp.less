@@ -305,8 +305,8 @@ ul.menu ul li:last-child {   border-bottom:1px solid #b2b2b2;
     outline: none;
 }
 .menu-item a:focus {
-    background-color: darken(@navbarBackground, 40%);
-    color: white;
+    font-weight: bold;
+    color: black;
 }
 
 
@@ -317,6 +317,10 @@ border-bottom: none;}
     background-image:none;
     color:#000000;
     filter:none;
+}
+.menu-item li li a:focus {
+    background-color: darken(@navbarBackground, 40%);
+    color: white;
 }
 
 .menu ul > li + li {
