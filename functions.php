@@ -536,6 +536,7 @@ function theme_js(){
 
   wp_deregister_script('jquery'); // initiate the function  
   wp_register_script('jquery', get_template_directory_uri().'/library/js/libs/jquery-1.7.1.min.js', false, '1.7.1');
+  wp_register_script('twitter', get_template_directory_uri().'/library/js/twitter.js', false, '1.1.0');
 
   wp_register_script('bootstrap', get_template_directory_uri().'/library/js/bootstrap.min.js');
   // wp_register_script('bootstrap-button', get_template_directory_uri().'/library/js/bootstrap-button.js');
@@ -559,6 +560,7 @@ function theme_js(){
 
   // wp_enqueue_script('less', array(''), '1.3.0', true);
   wp_enqueue_script('jquery');
+  wp_enqueue_script('twitter');
   wp_enqueue_script('bootstrap', array('jQuery'), '1.1', true);
   // wp_enqueue_script('bootstrap-button', array('jQuery'), '1.1', true);
   // wp_enqueue_script('bootstrap-carousel', array('jQuery'), '1.1', true);
@@ -818,6 +820,13 @@ function pp_shortcode_info( $atts, $content = null ) {
 }
 add_shortcode( 'info', 'pp_shortcode_info' );
 
+function pp_shortcode_pad( $atts, $content = null ) {
+    global $post;
+    $pad_link = get_post_meta($post->ID, "pad", true);
+    return "<iframe name='etherpad_embed' src='".$pad_link."' frameborder=0 width=900 height=600></iframe>";
+}
+add_shortcode( 'pad', 'pp_shortcode_pad' );
+
 /* language */
 
 load_theme_textdomain('bonestheme', get_template_directory().'/languages');
@@ -921,3 +930,4 @@ function pp_save_authorbox_meta( $post_ID ) {
     }
 }
 
+?>
