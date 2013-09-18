@@ -103,7 +103,7 @@ function bones_main_nav() {
             #'container' => '', /* container class */
             'fallback_cb' => 'bones_main_nav_fallback', /* menu fallback */
             'depth' => '2', /* suppress lower levels for now */
-            #'walker' => new description_walker()
+            'walker' => new description_walker()
         )
     );
 }

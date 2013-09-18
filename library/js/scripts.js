@@ -55,6 +55,18 @@ $(document).ready(function() {
         $(this).addClass('btn btn-danger btn-mini');
         return true;
     });
+
+    // on focus show the sub menu
+    $active_menu = null;
+    $(".menu-item-depth-0 > a").focus(function()  {
+        $("ul.sub-menu").css({
+            "visibility" : "hidden"
+        });
+        sub = $(this).siblings(".sub-menu :first").css({
+            "visibility": "visible",
+            "top" : "100%"
+        });
+    });
     
     // Prevent submission of empty form
     $('[placeholder]').parents('form').submit(function() {
